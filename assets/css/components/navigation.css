@@ -1,0 +1,12 @@
+.navigation {
+    background: yellow;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.navigation li img {
+    height: 50px;
+}
