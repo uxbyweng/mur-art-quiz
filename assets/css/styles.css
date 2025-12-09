@@ -1,5 +1,5 @@
-@import "/assets/css/global.css";
-@import "/assets/css/components/header.css";
-@import "/assets/css/components/navi.css";
-@import "/assets/css/components/button.css";
-@import "/assets/css/components/card.css";
+@import "./assets/css/global.css";
+@import "./assets/css/components/header.css";
+@import "./assets/css/components/navi.css";
+@import "./assets/css/components/button.css";
+@import "./assets/css/components/card.css";
