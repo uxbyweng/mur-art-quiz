@@ -13,6 +13,12 @@ body {
     line-height: 1.6;
 }
 
+.app {
+    max-width: 430px;
+    margin: 0 auto;
+    background: #000;
+}
+
 h1,
 h2,
 h3 {
@@ -22,6 +28,12 @@ h3 {
 }
 
 main {
-    background: white;
+    background: lightblue;
     height: 500px;
+}
+
+footer {
+    position: sticky;
+    top: 0;
+    background: yellow;
 }
