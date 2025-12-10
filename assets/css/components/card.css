@@ -37,6 +37,10 @@
     color: white;
     margin-left: 20px;
 }
+.quiz-card__bookmark--active i {
+    font-size: 44px;
+    color: #00ff00;
+}
 .quiz-card__bookmark i:hover {
     font-size: 44px;
     color: #00ff00;
