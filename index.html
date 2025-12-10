@@ -11,6 +11,7 @@
 <body>
     <div class="app">
 
+        <!-- HEADER / LOGO -->
         <header>
             <div class="logo">
                 <div class="logo__image">
@@ -19,30 +20,31 @@
                     </a>
                 </div>
                 <div class="logo__claim">
-                    The Street Artist Quiz
+                    <h2 class="invert">The Street Artist Quiz</h2>
                 </div>
             </div>
         </header>
 
+        <!-- CONTENT BEREICH -->
         <main>
-            <section>
-                <h1>
+
+            <!-- TITLE  -->
+            <section class="page-title">
+                <h1 class="invert">
                     Quiz: Do you know the street artists?
                 </h1>
             </section>
 
             <section class="quiz">
-
-                <!-- QUIZ-CARD #01 -->
+                <!-- QUESTION #01 -->
                 <div class="quiz-card quiz-card--q01">
                     <!-- TOP-->
                     <div class="quiz-card__top">
                         <h2 class="quiz-card__number">
                             Question #01
                         </h2>
-                        <a href="./profile/" class="quiz-card__bookmark" role="button">
+                        <a href="./bookmarks/" class="quiz-card__bookmark" role="button">
                             <i class="icon-bookmark"></i>
-                            <!-- <span>Bookmark</span> -->
                         </a>
                     </div>
                     <!-- BOTTOM-->
@@ -53,7 +55,7 @@
                         </h3>
                         <div class="quiz-card__choice">
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">Herakut</a>
-                            <a href="#" class="btn quiz-card__btn quiz-card__btn--true" role="button">Victor Ash</a>
+                            <a href="#a1" class="btn quiz-card__btn quiz-card__btn--true" role="button">Victor Ash</a>
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">Invader</a>
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">ROA</a>
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">Dave the
@@ -67,15 +69,46 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- QUIZ-CARD #02 -->
+                <!-- ANSWER #01 -->
+                <div class="quiz-card quiz-card--q01" id="a1">
+                    <!-- TOP-->
+                    <div class="quiz-card__top">
+                        <h2 class="quiz-card__number">
+                            Answer #01
+                        </h2>
+                        <a href="./bookmarks/" class="quiz-card__bookmark quiz-card__bookmark--active" role="button">
+                            <i class="icon-bookmark"></i>
+                        </a>
+                    </div>
+                    <!-- BOTTOM-->
+                    <div class="quiz-card__bottom">
+                        <h3 class="quiz-card__question">
+                            Victor Ash
+                        </h3>
+                        <div class="quiz-card__answer">
+                            <p>
+                                This giant Spaceman mural called "Astronaut/Cosmonaut" was created by the French artist
+                                Victor Ash in 2007 in Berlin’s Kreuzberg. The floating astronaut points to the Cold War
+                                and space
+                                race, linking back to the city’s divided past. Today it’s one of Berlin’s most famous
+                                street art landmarks.
+                            </p>
+                        </div>
+                        <div class="quiz-card__hashtags">
+                            <a href="#" class="quiz-card__pill">#astronaut</a>
+                            <a href="#" class="quiz-card__pill">#mural</a>
+                            <a href="#" class="quiz-card__pill">#kreuzberg</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- QUESTION#02 -->
                 <div class="quiz-card quiz-card--q02">
                     <!-- TOP-->
                     <div class="quiz-card__top">
                         <h2 class="quiz-card__number">
                             Question #02
                         </h2>
-                        <a href="./profile/" class="quiz-card__bookmark" role="button">
+                        <a href="./bookmarks/" class="quiz-card__bookmark" role="button">
                             <i class="icon-bookmark"></i>
                             <!-- <span>Bookmark</span> -->
                         </a>
@@ -87,7 +120,7 @@
                             Berlin Kreuzberg?
                         </h3>
                         <div class="quiz-card__choice">
-                            <a href="#" class="btn quiz-card__btn quiz-card__btn--true role=" button">Herakut</a>
+                            <a href="#a2" class="btn quiz-card__btn quiz-card__btn--true" role="button">Herakut</a>
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">Victor Ash</a>
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">Invader</a>
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">ROA</a>
@@ -96,23 +129,53 @@
                             <a href="#" class="btn quiz-card__btn quiz-card__btn--false" role="button">Tank</a>
                         </div>
                         <div class="quiz-card__hashtags">
+                            <a href="#" class="quiz-card__pill">#home</a>
+                            <a href="#" class="quiz-card__pill">#mural</a>
+                            <a href="#" class="quiz-card__pill">#kreuzberg</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- AANSWER #02 -->
+                <div class="quiz-card quiz-card--q02" id="a2">
+                    <!-- TOP-->
+                    <div class="quiz-card__top">
+                        <h2 class="quiz-card__number">
+                            Answer #02
+                        </h2>
+                        <a href="./bookmarks/" class="quiz-card__bookmark" role="button">
+                            <i class="icon-bookmark"></i>
+                        </a>
+                    </div>
+                    <!-- BOTTOM-->
+                    <div class="quiz-card__bottom">
+                        <h3 class="quiz-card__question">
+                            Herakut
+                        </h3>
+                        <div class="quiz-card__answer">
+                            <p>
+                                This mural "My home might be no palace, but we can share it if you like." was created by
+                                the artistic duo Herakut, finished May 2018. It is located near the Moritzplatz in
+                                Berlin Kreuzberg.
+                            </p>
+                        </div>
+                        <div class="quiz-card__hashtags">
                             <a href="#" class="quiz-card__pill">#astronaut</a>
                             <a href="#" class="quiz-card__pill">#mural</a>
                             <a href="#" class="quiz-card__pill">#kreuzberg</a>
                         </div>
                     </div>
                 </div>
-
             </section>
 
         </main>
 
+        <!-- NAVIGATION -->
         <footer>
             <nav class="navigation">
                 <ul class="navigation__list">
                     <li class="navigation__list-item navigation__list-item--active">
                         <a href="./" role="button">
-                            <i class="navigation__icon  icon-house"></i>
+                            <i class="navigation__icon icon-house"></i>
                             <span>Home</span>
                         </a>
                     </li>
