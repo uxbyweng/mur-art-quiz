@@ -7,19 +7,57 @@
 :root {
     --font-headline: Arial, Helvetica, sans-serif;
     --font-body-text: Arial, Helvetica, sans-serif;
-    --body-text-color: #000;
-    --headline-color: #fff;
+
+    --background-lightmode: #ffffff;
+    --background-darkmode: #000000;
+
+    --text-color-lightmode: #000000;
+    --text-color-darkmode: #ffffff;
+
+    --headline-color-lightmode: #000000;
+    --headline-color-darkmode: #ffffff;
+
+    /* Standard = Dark */
+    --background-color: var(--background-darkmode);
+    --text-color: var(--text-color-darkmode);
+    --headline-color: var(--headline-color-darkmode);
+
+    /* Standard = Light
+    --background-color: var(--background-lightmode);
+    --text-color: var(--text-color-lightmode);
+    --headline-color: var(--headline-color-lightmode);
+    --background-color: #000; 
+    --background-darkmode: #000;
+    --background-lightmode: #fff;
+    --text-color: #fff; 
+    --text-color-darkmode: #fff;
+    --text-color-lightmode: #000;
+    --headline-color: #fff; 
+    --headline-color-darkmode: #fff;
+    --headline-color-lightmode: #000; */
 }
+
 html,
 body {
     font-family: var(--font-body-text);
-    color: var(--body-text-color);
+    color: var(--text-color);
+    background-color: var(--background-color);
     background-image: url("../../assets/images/bg-mur-art.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-weight: 300;
     line-height: 1.6;
+}
+/* body:has(#darkmode:checked) {
+    --background-color: var(--background-darkmode);
+    --text-color: var(--text-color-darkmode);
+    --headline-color: var(--headline-color-darkmode);
+} */
+body:has(#darkmode:checked) {
+    --background-color: var(--background-darkmode);
+    --text-color: var(--text-color-darkmode);
+    --headline-color: var(--headline-color-darkmode);
 }
 
 .app {
@@ -28,10 +66,6 @@ body {
     max-width: 430px;
     margin: 0 auto;
     background: rgb(0 0 0 / 40%);
-}
-
-.visually-hidden {
-    visibility: hidden;
 }
 
 h1,
@@ -63,12 +97,14 @@ header {
     align-items: flex-start;
 }
 main {
-    align-items: center;
-    padding: 30px;
+    align-items: stretch;
+    background: rgba(0, 0, 0, 0.1) 50%;
+    padding: 30px 30px 120px 30px;
+    height: auto;
 }
 
-section.intro {
-    margin: 30px 0 30px;
+section {
+    margin: 0 0 30px 0;
 }
 
 footer {
