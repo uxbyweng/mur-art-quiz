@@ -1,12 +1,27 @@
 .navigation {
-    background: yellow;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
-.navigation ul {
+.navigation__list {
     display: flex;
     justify-content: space-around;
     list-style: none;
 }
-.navigation li img {
-    height: 50px;
+.navigation__list-item a {
+    color: #00d5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navigation__icon {
+    color: #00d5ff;
+    font-size: 44px;
+    line-height: 1;
+}
+
+.navigation__list-item a:hover i,
+.navigation__list-item a:hover span {
+    color: #00ff00;
 }

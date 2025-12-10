@@ -1,4 +1,5 @@
 @import "./global.css";
+@import "../fonts/lucide/lucide.css";
 @import "./components/header.css";
 @import "./components/navigation.css";
 @import "./components/button.css";

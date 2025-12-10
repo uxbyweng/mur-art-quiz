@@ -1,11 +1,11 @@
 header {
+    position: sticky;
+    top: 0;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
-    background: black;
-    height: 100px;
-    margin: 0 auto;
+    /* CSS GRADIENT FROM: https://cssgradient.io/ */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    height: 150px;
 }
 
 .logo {
@@ -13,17 +13,15 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 75%;
 }
 
 .logo__image {
-    display: flex;
     padding: 10px 0 0 0;
 }
 .logo__claim {
-    display: flex;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     color: white;
-    padding: 10px 0 0 0;
+    padding: 0;
 }
