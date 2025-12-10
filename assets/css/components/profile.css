@@ -1,0 +1,65 @@
+.profile {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
+    margin: 0;
+}
+.profile__user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.profile__image {
+    border-radius: 50%;
+    border: 1px solid #00ff00;
+}
+.profile__name {
+    color: white;
+}
+.profile__details {
+    padding: 10px 0 10px 0;
+    border-top: 1px solid #666;
+}
+.profile__details h3 {
+    color: white;
+}
+.profile__details p {
+    margin: 10px 0 10px 0;
+    color: #00d5ff;
+    line-height: 1.2;
+}
+
+.profile__counter {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #666;
+    padding-bottom: 20px;
+}
+.profile__questions,
+.profile__bookmarks {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    padding: 1px 15px 1px 15px;
+}
+.profile__questions i {
+    align-items: center;
+    color: white;
+}
+.profile__settings {
+    align-items: center;
+    padding: 10px 0 10px 0;
+    border-top: 1px solid #666;
+}
+.profile__settings p {
+    margin: 10px 0 10px 0;
+    color: #00d5ff;
+    line-height: 1.2;
+}
