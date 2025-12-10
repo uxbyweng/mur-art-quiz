@@ -4,36 +4,69 @@
     padding: 0;
 }
 
+:root {
+    --font-headline: Arial, Helvetica, sans-serif;
+    --font-body-text: Arial, Helvetica, sans-serif;
+    --body-text-color: #000;
+    --headline-color: #fff;
+}
 html,
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-body-text);
     color: var(--body-text-color);
-    background-color: var(--bg-body);
+    background-image: url("../../assets/images/bg-mur-art.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-weight: 300;
     line-height: 1.6;
 }
 
 .app {
+    display: flex;
+    flex-direction: column;
     max-width: 430px;
     margin: 0 auto;
-    background: #000;
+    background: rgb(0 0 0 / 40%);
+}
+
+.visually-hidden {
+    visibility: hidden;
 }
 
 h1,
 h2,
 h3 {
     font-family: var(--font-headline);
-    font-weight: 500;
-    color: var(--body-text-color);
+    color: var(--headline-color);
 }
 
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 45px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+header {
+    align-items: flex-start;
+}
 main {
-    background: lightblue;
-    height: 500px;
+    align-items: center;
+    padding: 30px;
+}
+
+section {
+    margin: 10px 0 10px;
 }
 
 footer {
-    position: sticky;
-    top: 0;
-    background: yellow;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 430px;
 }

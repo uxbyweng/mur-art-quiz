@@ -1,4 +1,14 @@
-.card {
-    background: blue;
+.quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.quiz-card {
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
     height: 350px;
+    box-shadow: 5px 5px 10px;
 }
