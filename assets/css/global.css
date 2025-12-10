@@ -30,6 +30,7 @@ body {
     background-attachment: fixed;
     font-weight: 300;
     line-height: 1.6;
+    scrollbar-gutter: stable;
 }
 
 body:has(#darkmode:checked) {
