@@ -4,11 +4,96 @@
     gap: 2rem;
 }
 
+/* QUIZ_CARD */
 .quiz-card {
-    display: flex;
-    padding: 20px;
     border-radius: 10px;
-    background: white;
+    background-repeat: no-repeat;
+    background-position: top left;
     height: 350px;
     box-shadow: 5px 5px 10px;
+}
+
+/* QUIZ_CARD - TOP */
+.quiz-card__top {
+    position: relative;
+    height: 150px;
+    padding: 20px;
+}
+.quiz-card__question {
+    background-color: white;
+}
+.quiz-card__number {
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.quiz-card__bookmark {
+    position: absolute;
+    top: -25px;
+    right: 20px;
+}
+.quiz-card__bookmark i {
+    font-size: 44px;
+    color: white;
+}
+.quiz-card__bookmark i:hover {
+    font-size: 44px;
+    color: #00ff00;
+}
+.quiz-card__bookmark {
+    text-decoration: none;
+}
+
+/* QUIZ_CARD - BOTTOM */
+.quiz-card__bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0 20px 0 20px;
+}
+
+.quiz-card__question {
+    align-content: center;
+    color: #000;
+    height: 80px;
+}
+.quiz-card__choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 330px;
+}
+.quiz-card__choice a {
+    display: grid;
+    align-items: center;
+    background-color: #1089e0;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #1089e0;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 10px;
+}
+.quiz-card__btn:hover {
+    background-color: #052e5e;
+    color: #fff;
+}
+.quiz-card__btn--false:active {
+    background-color: #ff0000;
+    color: #fff;
+}
+.quiz-card__btn--true:active {
+    background-color: #00ff00;
+    color: #fff;
+}
+
+/* QUIZ-CARD BG IMAGES */
+.quiz-card--q01 {
+    background-image: url("../../../assets/images/mural-01-victor-ash.jpg");
+}
+.quiz-card--q02 {
+    background-image: url("../../../assets/images/mural-02-herakut.jpg");
 }
