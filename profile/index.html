@@ -36,6 +36,7 @@
 
             <!-- USER PROFILE -->
             <section class="profile">
+
                 <div class="profile__user">
                     <img src="../assets/images/profile-image-weng.jpg" class="profile__image" width="70" height="70"
                         alt="Profile Image: Karsten Weng">
@@ -45,28 +46,27 @@
                 </div>
 
                 <div class="profile__details">
-                    <h3>
+                    <h3 class="invert">
                         About me
                     </h3>
                     <p>
                         Frontend Developer focused on performance, accessibility, and maintainable UI — bridging design
                         and engineering.
                     </p>
-                </div>
-
-                <div class="profile__counter">
-                    <div class="profile__questions">
-                        <i class="icon-circle-question-mark"></i>
-                        <number>9</number>
-                    </div>
-                    <div class="profile__bookmarks">
-                        <i class="icon-bookmark"></i>
-                        <number>9</number>
+                    <div class="profile__counter">
+                        <div class="profile__questions">
+                            <i class="icon-circle-question-mark"></i>
+                            <number>3</number>
+                        </div>
+                        <div class="profile__bookmarks">
+                            <i class="icon-bookmark"></i>
+                            <number>2</number>
+                        </div>
                     </div>
                 </div>
 
                 <div class="profile__settings">
-                    <h3>
+                    <h3 class="invert">
                         Settings
                     </h3>
                     <p>
@@ -84,20 +84,20 @@
             <nav class="navigation">
                 <ul class="navigation__list">
                     <li class="navigation__list-item">
-                        <a href="../" role="button">
-                            <i class="navigation__icon  icon-house"></i>
+                        <a href="../" class="btn--nav" role="button">
+                            <i class="btn--nav__icon icon-house"></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li class="navigation__list-item">
-                        <a href="../bookmarks/" role="button">
-                            <i class="navigation__icon icon-bookmark"></i>
+                        <a href="../bookmarks/" class="btn--nav" role="button">
+                            <i class="btn--nav__icon icon-bookmark"></i>
                             <span>Bookmarks</span>
                         </a>
                     </li>
-                    <li class="navigation__list-item navigation__list-item--active">
-                        <a href="./profile/" role="button">
-                            <i class="navigation__icon icon-circle-user"></i>
+                    <li class="navigation__list-item">
+                        <a href="./profile/" class="btn--nav btn--nav--active" role="button">
+                            <i class="btn--nav__icon icon-circle-user"></i>
                             <span>Profile</span>
                         </a>
                     </li>

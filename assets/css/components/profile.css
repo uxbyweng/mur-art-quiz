@@ -10,21 +10,20 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    border-bottom: 1px solid #666;
 }
 .profile__image {
     border-radius: 50%;
     border: 1px solid #00ff00;
 }
 .profile__name {
-    color: white;
+    filter: invert(1);
 }
 .profile__details {
     padding: 10px 0 10px 0;
-    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
 }
-.profile__details h3 {
-    color: white;
-}
+
 .profile__details p {
     margin: 10px 0 10px 0;
     color: #00d5ff;
@@ -34,7 +33,6 @@
 .profile__counter {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #666;
     padding-bottom: 20px;
 }
 .profile__questions,
@@ -56,7 +54,6 @@
 .profile__settings {
     align-items: center;
     padding: 10px 0 10px 0;
-    border-top: 1px solid #666;
 }
 .profile__settings p {
     margin: 10px 0 10px 0;

@@ -5,18 +5,27 @@
 }
 
 :root {
+    /* Typography */
     --font-headline: Arial, Helvetica, sans-serif;
     --font-body-text: Arial, Helvetica, sans-serif;
-    --background-lightmode: #ffffff;
-    --background-darkmode: #000000;
-    --text-color-lightmode: #000000;
-    --text-color-darkmode: #ffffff;
-    --headline-color-lightmode: #000000;
-    --headline-color-darkmode: #ffffff;
+    /* Colors */
+    --accent-primary: #00ff00;
+    --accent-secondary: #00d5ff;
+    --accent-secondary-dark: #006699;
+    --background-light: #ffffff;
+    --background-dark: #000000;
+    --text-color-dark: #000000;
+    --text-color-light: #ffffff;
+    --headline-color-dark: #000000;
+    --headline-color-light: #ffffff;
+    --color-error: #ff0000;
+    --color-success: #009900;
+    --color-gray-d: #ddd;
+    --color-gray-b: #bbb;
     /* Standard = Light */
-    --background-color: var(--background-lightmode);
-    --text-color: var(--text-color-lightmode);
-    --headline-color: var(--headline-color-lightmode);
+    --background-color: var(--background-light);
+    --text-color: var(--text-color-dark);
+    --headline-color: var(--headline-color-dark);
 }
 
 html,
@@ -39,6 +48,32 @@ body:has(#darkmode:checked) {
     --headline-color: var(--headline-color-darkmode);
 }
 
+h1,
+h2,
+h3 {
+    font-family: var(--font-headline);
+    color: var(--headline-color);
+}
+h1 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+p {
+    color: var(--text-color);
+}
+
+/* APP WRAPPER */
 .app {
     display: flex;
     flex-direction: column;
@@ -47,37 +82,16 @@ body:has(#darkmode:checked) {
     background: rgb(0 0 0 / 40%);
 }
 
-h1,
-h2,
-h3 {
-    font-family: var(--font-headline);
-    color: var(--headline-color);
-}
-
-h1 {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-h3 {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-p {
-    color: var(--text-color);
-}
-
+/* MAIN PAGE AREAS */
 header {
-    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    /* CSS GRADIENT FROM: https://cssgradient.io/ */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    height: 100px;
 }
 main {
     align-items: stretch;
@@ -85,11 +99,9 @@ main {
     padding: 30px 30px 120px 30px;
     height: auto;
 }
-
 section {
     margin: 0 0 30px 0;
 }
-
 footer {
     position: fixed;
     bottom: 0;
@@ -97,6 +109,7 @@ footer {
     max-width: 430px;
 }
 
+/* OTHER GLOBAL CLASSES */
 .invert {
     filter: invert(1);
 }
