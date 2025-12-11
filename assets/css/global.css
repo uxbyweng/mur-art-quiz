@@ -22,6 +22,8 @@
     --color-success: #009900;
     --color-gray-d: #ddd;
     --color-gray-b: #bbb;
+    --color-gray-6: #666;
+    --color-white: #fff;
     /* Standard = Light */
     --background-color: var(--background-light);
     --text-color: var(--text-color-dark);

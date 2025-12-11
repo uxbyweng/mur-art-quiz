@@ -31,7 +31,7 @@
 }
 .quizcard__bookmark i {
     font-size: 44px;
-    color: white;
+    color: var(--color-white);
     margin-left: 20px;
 }
 .quizcard__bookmark--active i {
