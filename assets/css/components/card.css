@@ -3,7 +3,7 @@
 }
 
 /* QUIZ_CARD */
-.quiz-card {
+.quizcard {
     border-radius: 10px;
     background-repeat: no-repeat;
     background-position: top left;
@@ -11,122 +11,72 @@
 }
 
 /* QUIZ_CARD - TOP */
-.quiz-card__top {
+.quizcard__top {
     position: relative;
     height: 150px;
     padding: 20px;
 }
-.quiz-card__question {
-    background-color: white;
-}
 
-.quiz-card__number {
+.quizcard__number {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    color: rgb(0, 255, 0);
+    color: var(--accent-primary);
 }
 
-.quiz-card__bookmark {
+.quizcard__bookmark {
     position: absolute;
     top: -25px;
     right: 20px;
 }
-.quiz-card__bookmark i {
+.quizcard__bookmark i {
     font-size: 44px;
     color: white;
     margin-left: 20px;
 }
-.quiz-card__bookmark--active i {
+.quizcard__bookmark--active i {
     font-size: 44px;
-    color: #00ff00;
+    color: var(--accent-primary);
 }
-.quiz-card__bookmark i:hover {
+.quizcard__bookmark i:hover {
     font-size: 44px;
-    color: #00ff00;
+    color: var(--accent-primary);
 }
-.quiz-card__bookmark {
+.quizcard__bookmark {
     text-decoration: none;
 }
 
 /* QUIZ_CARD - BOTTOM */
-.quiz-card__bottom {
+.quizcard__bottom {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--background-color);
     padding: 0 20px 0 20px;
 }
 
-.quiz-card__question {
+.quizcard__question {
     align-content: center;
-    color: #000;
+    color: var(--text-color);
     height: 80px;
     font-weight: 700;
 }
-.quiz-card__choice {
+.quizcard__choice {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 330px;
-}
-.quiz-card__choice a {
-    display: grid;
-    align-items: center;
-    background-color: #1089e0;
-    color: #fff;
-    line-height: 1.2;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #1089e0;
-    border-radius: 4px;
-    margin: 5px;
-    padding: 10px;
-}
-.quiz-card__btn:hover {
-    background-color: #052e5e;
-    color: #fff;
-}
-.quiz-card__btn--false:active {
-    background-color: #ff0000;
-    color: #fff;
-}
-.quiz-card__btn--true:active {
-    background-color: #097809;
-    color: #fff;
+    width: 100%;
 }
 
-.quiz-card__hashtags {
+.quizcard__hashtags {
     display: flex;
     justify-content: flex-start;
     padding: 10px 0 10px 0;
 }
-.quiz-card__pill {
-    display: flex;
-    background-color: #c1e4e7;
-    border: #4b4b4b;
-    border-radius: 10px;
-    color: black;
-    font-size: 12px;
-    line-height: 1.2;
-    padding: 5px 10px 5px 10px;
-    align-items: center;
-    display: inline-flex;
-    font-weight: 700;
-    justify-content: center;
-    text-decoration: none;
-    vertical-align: middle;
-    white-space: nowrap;
-    margin: 0 10px 0 0;
-}
-.quiz-card__pill:hover {
-    background-color: #3a6679;
-    color: rgb(0, 255, 0);
-}
 
-/* QUIZ-CARD BG IMAGES */
-.quiz-card--q01 {
+/* quizcard BG IMAGES */
+.quizcard--q01 {
     background-image: url("../../../assets/images/mural-01-victor-ash.jpg");
 }
-.quiz-card--q02 {
+.quizcard--q02 {
     background-image: url("../../../assets/images/mural-02-herakut.jpg");
 }
