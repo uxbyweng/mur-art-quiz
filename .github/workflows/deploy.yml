@@ -1,0 +1,64 @@
+name: Deploy to STRATO via SFTP
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: {}
+
+concurrency:
+  group: "deploy-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install sshpass
+        run: sudo apt-get update -qq && sudo apt-get install -y sshpass -qq
+
+      - name: Upload project via SFTP
+        env:
+          HOST: ${{ secrets.SFTP_HOST }}
+          USER: ${{ secrets.SFTP_USER }}
+          PASS: ${{ secrets.SFTP_PASS }}
+          PORT: ${{ secrets.SFTP_PORT || 22 }}
+          REMOTE_ROOT: ${{ secrets.SFTP_REMOTE_ROOT || '.' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Liste aller Dateien, die deployed werden sollen (ohne .git & Workflow-Kram)
+          find . -type f \
+            ! -path "./.git/*" \
+            ! -path "./.github/*" \
+            -print | sed 's|^\./||' > uploads.txt
+
+          BATCH="$(mktemp)"
+
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+
+            # Zielordner rekursiv anlegen
+            dir="$(dirname "$f")"
+            if [ "$dir" != "." ]; then
+              IFS='/' read -ra parts <<< "$dir"
+              path="$REMOTE_ROOT"
+              for p in "${parts[@]}"; do
+                [ -z "$p" ] && continue
+                path="$path/$p"
+                printf 'mkdir "%s"\n' "$path" >> "$BATCH"
+              done
+            fi
+
+            # Datei hochladen
+            printf 'put -p "%s" "%s/%s"\n' "$f" "$REMOTE_ROOT" "$f" >> "$BATCH"
+          done < uploads.txt
+
+          echo "=== SFTP Batch (first lines) ==="
+          head -n 40 "$BATCH" || true
+          echo "================================"
+
+          sshpass -p "$PASS" sftp -o StrictHostKeyChecking=no -P "$PORT" "${USER}@${HOST}" < "$BATCH"
