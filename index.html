@@ -5,211 +5,319 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>mural.art - The Street Artist Quiz</title>
+    <title>mur.art - The Street Artist Quiz</title>
 </head>
 
 <body>
-    <div class="app">
 
-        <!-- HEADER / LOGO -->
-        <header>
-            <div class="logo">
-                <div class="logo__image">
-                    <a href="/">
-                        <img src="./assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
+    <!-- HEADER / LOGO -->
+    <header>
+        <div class="logo">
+            <div class="logo__image">
+                <a href="/">
+                    <img src="./assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
+                </a>
+            </div>
+            <div class="logo__claim">
+                <h1 class="logo__claim-text invert">Street Artist Quiz <span
+                        style="background: #fff; border: 1px solid #ff0000; padding: 2px 8px 2px 8px; margin: 10px;border-radius:10px;">Home</span>
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT BEREICH -->
+    <main>
+
+        <!-- TITLE  -->
+        <!-- <section class="page-title">
+            <h1 class="invert">
+                Quiz: Do you know the street artists?
+            </h1>
+        </section> -->
+
+
+        <section class="kart-section">
+
+
+            <article class="kart" id="q1">
+                <div class="kart__top">
+                    <img class="kart__bg" src="./assets/images/mural-01-victor-ash.jpg"
+                        alt="Foto eines Wandgemäldes an einer Hausfassade." />
+                    <a href="./bookmarks/" class="kart__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </a>
+                    <h2 class="kart__title">Who is the artist of this mural?</h2>
+                </div>
+                <div class="kart__choice">
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
+                        aria-checked="false">Herakut</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
+                        aria-checked="false">Victor Ash</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
+                        aria-checked="false">Invader</button>
+                </div>
+                <div class="kart__answer" style="display: none;">
+                    <p>
+                        This large black-and-white mural with the title <em>"Astronaut/Cosmonaut"</em> was created by
+                        Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city
+                        references the Cold War space
+                        race and highlights the smallness of human power.
+                    </p>
+                    <p>
+                        Location: <a href="https://maps.app.goo.gl/wyRa3FDjhuHfaAch6">Mariannenstraße 8, 10999
+                            Berlin</a>
+                    </p>
+                </div>
+                <div class="kart__hashtag">
+                    <a href="#" class="btn btn--hashtag">#astronaut</a>
+                    <a href="#" class="btn btn--hashtag">#mural</a>
+                    <a href="#" class="btn btn--hashtag">#kreuzberg</a>
+                </div>
+                <div class="kart__btn">
+                    <a href="#q2" class="btn btn--next btn--disabled">Next Question</a>
+                </div>
+            </article>
+
+            <article class="kart" id="a1">
+                <div class="kart__top">
+                    <img class="kart__bg" src="./assets/images/mural-01-victor-ash.jpg"
+                        alt="Foto eines Wandgemäldes an einer Hausfassade." />
+                    <a href="./bookmarks/" class="kart__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </a>
+                    <h2 class="kart__title"><span style="color:greenyellow">Correct answer!</span></h2>
+                </div>
+                <div class="kart__choice" style="display: none;">
+                    <button class="btn btn--choice" type="button" role="radio" data-answer="false"
+                        aria-checked="false">Herakut</button>
+                    <button class="btn btn--choice" type="button" role="radio" data-answer="true"
+                        aria-checked="false">Victor Ash</button>
+                    <button class="btn btn--choice" type="button" role="radio" data-answer="false"
+                        aria-checked="false">Invader</button>
+                </div>
+                <div class="kart__answer">
+                    <p>
+                        This large black-and-white mural with the title <em>"Astronaut/Cosmonaut"</em> was created by
+                        Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city
+                        references the Cold War space
+                        race and highlights the smallness of human power.
+                    </p>
+                    <p>
+                        Location: <a href="https://maps.app.goo.gl/wyRa3FDjhuHfaAch6">Mariannenstraße 8, 10999
+                            Berlin</a>
+                    </p>
+                </div>
+                <div class="kart__hashtag">
+                    <a href="#" class="btn btn--hashtag">#astronaut</a>
+                    <a href="#" class="btn btn--hashtag">#mural</a>
+                    <a href="#" class="btn btn--hashtag">#kreuzberg</a>
+                </div>
+                <div class="kart__btn">
+                    <a href="#q2" class="btn btn--next" role="button">Next Question</a>
+                </div>
+            </article>
+
+            <article class="kart" id="q2">
+                <div class="kart__top">
+                    <img class="kart__bg" src="./assets/images/mural-01-victor-ash.jpg"
+                        alt="Foto eines Wandgemäldes an einer Hausfassade." />
+                    <a href="./bookmarks/" class="kart__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </a>
+                    <h2 class="kart__title">Who is the artist of this mural?</h2>
+                </div>
+                <div class="kart__choice">
+                    <button class="btn btn--choice" type="button" role="radio" data-answer="false"
+                        aria-checked="false">Herakut</button>
+                    <button class="btn btn--choice" type="button" role="radio" data-answer="true"
+                        aria-checked="false">Victor Ash</button>
+                    <button class="btn btn--choice" type="button" role="radio" data-answer="false"
+                        aria-checked="false">Invader</button>
+                </div>
+                <div class="kart__hashtag">
+                    <a href="#" class="btn btn--hashtag">#astronaut</a>
+                    <a href="#" class="btn btn--hashtag">#mural</a>
+                    <a href="#" class="btn btn--hashtag">#kreuzberg</a>
+                </div>
+                <div class="kart__btn">
+                    <a href="#q2" class="btn btn--next btn--disabled">Next Question</a>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="quiz" style="display:none;">
+            <!-- QUESTION #01 -->
+            <div class="quizcard quizcard--q01">
+                <!-- TOP-->
+                <div class="quizcard__top">
+                    <h2 class="quizcard__number">
+                        Question #01
+                    </h2>
+                    <a href="./bookmarks/" class="quizcard__bookmark" aria-label="Eintrag zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
                     </a>
                 </div>
-                <div class="logo__claim">
-                    <p class="logo__claim-text invert">The Street Artist Quiz</p>
+                <!-- BOTTOM-->
+                <div class="quizcard__bottom">
+                    <h3 class="quizcard__question">
+                        Which street artists created this beautiful mural in Berlin!
+                    </h3>
+                    <div class="quizcard__choice">
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Herakut">Herakut</a>
+                        <a href="#a1" class="btn btn--quizcard btn--true" role="button"
+                            aria-label="Antwort auswählen: Victor Ash">Victor Ash</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Invader">Invader</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: ROA">ROA</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Dave the Chimp">Dave the Chimp</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Tank">Tank</a>
+                    </div>
+                    <div class="quizcard__hashtags">
+                        <a href="#" class="btn btn--pill">#astronaut</a>
+                        <a href="#" class="btn btn--pill">#mural</a>
+                        <a href="#" class="btn btn--pill">#kreuzberg</a>
+                    </div>
                 </div>
             </div>
-        </header>
 
-        <!-- CONTENT BEREICH -->
-        <main>
-
-            <!-- TITLE  -->
-            <section class="page-title">
-                <h1 class="invert">
-                    Quiz: Do you know the street artists?
-                </h1>
-            </section>
-
-            <section class="quiz">
-
-                <!-- QUESTION #01 -->
-                <div class="quizcard quizcard--q01">
-                    <!-- TOP-->
-                    <div class="quizcard__top">
-                        <h2 class="quizcard__number">
-                            Question #01
-                        </h2>
-                        <a href="./bookmarks/" class="quizcard__bookmark"
-                            aria-label="Eintrag zu Lesezeichen hinzufügen">
-                            <i class="icon-bookmark" aria-hidden="true"></i>
-                        </a>
+            <!-- ANSWER #01 -->
+            <div class="quizcard quizcard--q01" id="a1">
+                <!-- TOP-->
+                <div class="quizcard__top">
+                    <h2 class="quizcard__number">
+                        Answer #01
+                    </h2>
+                    <a href="./bookmarks/" class="quizcard__bookmark quizcard__bookmark--active"
+                        aria-label="Eintrag aus Lesezeichen entfernen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- BOTTOM-->
+                <div class="quizcard__bottom">
+                    <h3 class="quizcard__question">
+                        Victor Ash
+                    </h3>
+                    <div class="quizcard__answer">
+                        <p>
+                            This giant Spaceman mural called "Astronaut/Cosmonaut" was created by the French artist
+                            Victor Ash in 2007 in Berlin’s Kreuzberg. The floating astronaut points to the Cold War
+                            and space
+                            race, linking back to the city’s divided past. Today it’s one of Berlin’s most famous
+                            street art landmarks.
+                        </p>
                     </div>
-                    <!-- BOTTOM-->
-                    <div class="quizcard__bottom">
-                        <h3 class="quizcard__question">
-                            Which street artists created this beautiful mural in Berlin!
-                        </h3>
-                        <div class="quizcard__choice">
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Herakut">Herakut</a>
-                            <a href="#a1" class="btn btn--quizcard btn--true" role="button"
-                                aria-label="Antwort auswählen: Victor Ash">Victor Ash</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Invader">Invader</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: ROA">ROA</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Dave the Chimp">Dave the Chimp</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Tank">Tank</a>
-                        </div>
-                        <div class="quizcard__hashtags">
-                            <a href="#" class="btn btn--pill">#astronaut</a>
-                            <a href="#" class="btn btn--pill">#mural</a>
-                            <a href="#" class="btn btn--pill">#kreuzberg</a>
-                        </div>
+                    <div class="quizcard__hashtags">
+                        <a href="#" class="btn btn--pill">#astronaut</a>
+                        <a href="#" class="btn btn--pill">#mural</a>
+                        <a href="#" class="btn btn--pill">#kreuzberg</a>
                     </div>
                 </div>
-                <!-- ANSWER #01 -->
-                <div class="quizcard quizcard--q01" id="a1">
-                    <!-- TOP-->
-                    <div class="quizcard__top">
-                        <h2 class="quizcard__number">
-                            Answer #01
-                        </h2>
-                        <a href="./bookmarks/" class="quizcard__bookmark quizcard__bookmark--active"
-                            aria-label="Eintrag aus Lesezeichen entfernen">
-                            <i class="icon-bookmark" aria-hidden="true"></i>
-                        </a>
+            </div>
+
+            <!-- QUESTION#02 -->
+            <div class="quizcard quizcard--q02">
+                <!-- TOP-->
+                <div class="quizcard__top">
+                    <h2 class="quizcard__number">
+                        Question #02
+                    </h2>
+                    <a href="./bookmarks/" class="quizcard__bookmark" aria-label="Eintrag zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- BOTTOM-->
+                <div class="quizcard__bottom">
+                    <h3 class="quizcard__question">
+                        Which street artists created this beautiful mural in Berlin!
+                    </h3>
+                    <div class="quizcard__choice">
+                        <a href="#aa2" class="btn btn--quizcard btn--true" role="button"
+                            aria-label="Antwort auswählen: Herakut">Herakut</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Victor Ash">Victor Ash</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Invader">Invader</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: ROA">ROA</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Dave the Chimp">Dave the Chimp</a>
+                        <a href="#" class="btn btn--quizcard btn--false" role="button"
+                            aria-label="Antwort auswählen: Tank">Tank</a>
                     </div>
-                    <!-- BOTTOM-->
-                    <div class="quizcard__bottom">
-                        <h3 class="quizcard__question">
-                            Victor Ash
-                        </h3>
-                        <div class="quizcard__answer">
-                            <p>
-                                This giant Spaceman mural called "Astronaut/Cosmonaut" was created by the French artist
-                                Victor Ash in 2007 in Berlin’s Kreuzberg. The floating astronaut points to the Cold War
-                                and space
-                                race, linking back to the city’s divided past. Today it’s one of Berlin’s most famous
-                                street art landmarks.
-                            </p>
-                        </div>
-                        <div class="quizcard__hashtags">
-                            <a href="#" class="btn btn--pill">#astronaut</a>
-                            <a href="#" class="btn btn--pill">#mural</a>
-                            <a href="#" class="btn btn--pill">#kreuzberg</a>
-                        </div>
+                    <div class="quizcard__hashtags">
+                        <a href="#" class="btn btn--pill">#home</a>
+                        <a href="#" class="btn btn--pill">#mural</a>
+                        <a href="#" class="btn btn--pill">#kreuzberg</a>
                     </div>
                 </div>
-
-                <!-- QUESTION#02 -->
-                <div class="quizcard quizcard--q02">
-                    <!-- TOP-->
-                    <div class="quizcard__top">
-                        <h2 class="quizcard__number">
-                            Question #02
-                        </h2>
-                        <a href="./bookmarks/" class="quizcard__bookmark"
-                            aria-label="Eintrag zu Lesezeichen hinzufügen">
-                            <i class="icon-bookmark" aria-hidden="true"></i>
-                        </a>
+            </div>
+            <!-- AANSWER #02 -->
+            <div class="quizcard quizcard--q02" id="a2">
+                <!-- TOP-->
+                <div class="quizcard__top">
+                    <h2 class="quizcard__number">
+                        Answer #02
+                    </h2>
+                    <a href="./bookmarks/" class="quizcard__bookmark" aria-label="Eintrag zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- BOTTOM-->
+                <div class="quizcard__bottom">
+                    <h3 class="quizcard__question">
+                        Herakut
+                    </h3>
+                    <div class="quizcard__answer">
+                        <p>
+                            This mural "My home might be no palace, but we can share it if you like." was created by
+                            the artistic duo Herakut, finished May 2018. It is located near the Moritzplatz in
+                            Berlin Kreuzberg.
+                        </p>
                     </div>
-                    <!-- BOTTOM-->
-                    <div class="quizcard__bottom">
-                        <h3 class="quizcard__question">
-                            Which street artists created this beautiful mural in Berlin!
-                        </h3>
-                        <div class="quizcard__choice">
-                            <a href="#aa2" class="btn btn--quizcard btn--true" role="button"
-                                aria-label="Antwort auswählen: Herakut">Herakut</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Victor Ash">Victor Ash</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Invader">Invader</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: ROA">ROA</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Dave the Chimp">Dave the Chimp</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Tank">Tank</a>
-                        </div>
-                        <div class="quizcard__hashtags">
-                            <a href="#" class="btn btn--pill">#home</a>
-                            <a href="#" class="btn btn--pill">#mural</a>
-                            <a href="#" class="btn btn--pill">#kreuzberg</a>
-                        </div>
+                    <div class="quizcard__hashtags">
+                        <a href="#" class="btn btn--pill">#home</a>
+                        <a href="#" class="btn btn--pill">#mural</a>
+                        <a href="#" class="btn btn--pill">#kreuzberg</a>
                     </div>
                 </div>
-                <!-- AANSWER #02 -->
-                <div class="quizcard quizcard--q02" id="a2">
-                    <!-- TOP-->
-                    <div class="quizcard__top">
-                        <h2 class="quizcard__number">
-                            Answer #02
-                        </h2>
-                        <a href="./bookmarks/" class="quizcard__bookmark"
-                            aria-label="Eintrag zu Lesezeichen hinzufügen">
-                            <i class="icon-bookmark" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <!-- BOTTOM-->
-                    <div class="quizcard__bottom">
-                        <h3 class="quizcard__question">
-                            Herakut
-                        </h3>
-                        <div class="quizcard__answer">
-                            <p>
-                                This mural "My home might be no palace, but we can share it if you like." was created by
-                                the artistic duo Herakut, finished May 2018. It is located near the Moritzplatz in
-                                Berlin Kreuzberg.
-                            </p>
-                        </div>
-                        <div class="quizcard__hashtags">
-                            <a href="#" class="btn btn--pill">#home</a>
-                            <a href="#" class="btn btn--pill">#mural</a>
-                            <a href="#" class="btn btn--pill">#kreuzberg</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-            </section>
+        </section>
 
-        </main>
+    </main>
 
-        <!-- NAVIGATION -->
-        <footer>
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__list-item">
-                        <a href="./" class="btn--nav btn--nav--active">
-                            <i class="btn--nav__icon icon-house" aria-hidden="true"></i>
-                            <span>Home </span>
-                        </a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="./bookmarks/" class="btn--nav">
-                            <i class="btn--nav__icon icon-bookmark" aria-hidden="true"></i>
-                            <span>Bookmarks </span>
-                        </a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="./profile/" class="btn--nav">
-                            <i class="btn--nav__icon icon-circle-user" aria-hidden="true"></i>
-                            <span>Profile </span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
+    <!-- NAVIGATION -->
+    <footer>
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__list-item">
+                    <a href="./" class="navigation__link navigation__link--active">
+                        <i class="icon-house" aria-hidden="true"></i>
+                        <span>Home </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="./bookmarks/" class="navigation__link">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                        <span>Bookmarks </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="./profile/" class="navigation__link">
+                        <i class="icon-circle-user" aria-hidden="true"></i>
+                        <span>Profile </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
-    </div>
 </body>
 
 </html>

@@ -9,144 +9,103 @@
 </head>
 
 <body>
-    <div class="app">
 
-        <!-- HEADER / LOGO -->
-        <header>
-            <div class="logo">
-                <div class="logo__image">
-                    <a href="/">
-                        <img src="../assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
-                    </a>
-                </div>
-                <div class="logo__claim">
-                    <p class="logo__claim-text invert">The Street Artist Quiz</p>
-                </div>
+    <!-- HEADER / LOGO -->
+    <header>
+        <div class="logo">
+            <div class="logo__image">
+                <a href="/">
+                    <img src="../assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
+                </a>
             </div>
-        </header>
+            <div class="logo__claim">
+                <h1 class="logo__claim-text invert">Street Artist Quiz</h1>
+            </div>
+        </div>
+    </header>
 
-        <!-- CONTENT-BEREICH-->
-        <main>
+    <!-- CONTENT-BEREICH-->
+    <main>
 
-            <!-- TITLE  -->
-            <section class="page-title">
-                <h1 class="invert">
-                    Bookmarks.
-                </h1>
-            </section>
+        <!-- TITLE  -->
+        <!-- <section class="page-title">
+            <h1 class="invert">
+                Bookmarks.
+            </h1>
+        </section> -->
 
-            <!-- BOOKMARKS  -->
-            <section class="page-title">
+        <!-- BOOKMARKS  -->
+        <section class="kart-section">
 
-                <!-- QUESTION #01 -->
-                <div class="quizcard quizcard--q01">
-                    <!-- TOP-->
-                    <div class="quizcard__top">
-                        <h2 class="quizcard__number">
-                            Question #01
-                        </h2>
-                        <a href="./bookmarks/" class="quizcard__bookmark quizcard__bookmark--active"
-                            aria-label="Eintrag aus Lesezeichen entfernen">
-                            <i class="icon-bookmark" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <!-- BOTTOM-->
-                    <div class="quizcard__bottom">
-                        <h3 class="quizcard__question">
-                            Which street artists created this beautiful mural in Berlin!
-                        </h3>
-                        <div class="quizcard__choice">
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Herakut">Herakut</a>
-                            <a href="#a1" class="btn btn--quizcard btn--true" role="button"
-                                aria-label="Antwort auswählen: Victor Ash">Victor Ash</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Invader">Invader</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: ROA">ROA</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Dave the Chimp">Dave the Chimp</a>
-                            <a href="#" class="btn btn--quizcard quizcard__btn quizcard__btn--false" role="button"
-                                aria-label="Antwort auswählen: Tank">Tank</a>
-                        </div>
-                        <div class="quizcard__hashtags">
-                            <a href="#" class="btn btn--pill">#astronaut</a>
-                            <a href="#" class="btn btn--pill">#mural</a>
-                            <a href="#" class="btn btn--pill">#kreuzberg</a>
-                        </div>
-                    </div>
+            <!-- QUESTION #01 -->
+            <article class="kart" id="q1">
+                <div class="kart__top">
+                    <img class="kart__bg" src="../assets/images/mural-01-victor-ash.jpg"
+                        alt="Foto eines Wandgemäldes an einer Hausfassade." />
+                    <a href="../bookmarks/" class="kart__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                        <i class="icon-bookmark icon-bookmark--selected" aria-hidden="true"></i>
+                    </a>
+                    <h2 class="kart__title">Who is the artist of this mural?</h2>
                 </div>
-
-                <!-- QUESTION#02 -->
-                <div class="quizcard quizcard--q02">
-                    <!-- TOP-->
-                    <div class="quizcard__top">
-                        <h2 class="quizcard__number">
-                            Question #02
-                        </h2>
-                        <a href="./bookmarks/" class="quizcard__bookmark quizcard__bookmark--active"
-                            aria-label="Eintrag aus Lesezeichen entfernen">
-                            <i class="icon-bookmark" aria-hidden="true"></i>
-                            <!-- <span>Bookmark</span> -->
-                        </a>
-                    </div>
-                    <!-- BOTTOM-->
-                    <div class="quizcard__bottom">
-                        <h3 class="quizcard__question">
-                            Which street artists created this beautiful mural in Berlin!
-                        </h3>
-                        <div class="quizcard__choice">
-                            <a href="#a2" class="btn btn--quizcard btn--true" role="button"
-                                aria-label="Antwort auswählen: Herakut">Herakut</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Victor Ash">Victor Ash</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Invader">Invader</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: ROA">ROA</a>
-                            <a href="#" class="btn btn--quizcard btn--false" role="button"
-                                aria-label="Antwort auswählen: Dave the Chimp">Dave the Chimp</a>
-                            <a href="#" class="btn btn--quizcard quizcard__btn quizcard__btn--false" role="button"
-                                aria-label="Antwort auswählen: Tank">Tank</a>
-                        </div>
-                        <div class="quizcard__hashtags">
-                            <a href="#" class="btn btn--pill">#myhome</a>
-                            <a href="#" class="btn btn--pill">#mural</a>
-                            <a href="#" class="btn btn--pill">#kreuzberg</a>
-                        </div>
-                    </div>
+                <div class="kart__choice">
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
+                        aria-checked="false">Herakut</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
+                        aria-checked="false">Victor Ash</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
+                        aria-checked="false">Invader</button>
                 </div>
+                <div class="kart__answer" style="display: none;">
+                    <p>
+                        This large black-and-white mural with the title <em>"Astronaut/Cosmonaut"</em> was created by
+                        Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city
+                        references the Cold War space
+                        race and highlights the smallness of human power.
+                    </p>
+                    <p>
+                        Location: <a href="https://maps.app.goo.gl/wyRa3FDjhuHfaAch6">Mariannenstraße 8, 10999
+                            Berlin</a>
+                    </p>
+                </div>
+                <div class="kart__hashtag">
+                    <a href="#" class="btn btn--hashtag">#astronaut</a>
+                    <a href="#" class="btn btn--hashtag">#mural</a>
+                    <a href="#" class="btn btn--hashtag">#kreuzberg</a>
+                </div>
+                <div class="kart__btn">
+                    <a href="#q2" class="btn btn--next btn--disabled">Next Question</a>
+                </div>
+            </article>
 
-            </section>
-        </main>
+        </section>
+    </main>
 
-        <!-- NAVIGATION -->
-        <footer>
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__list-item">
-                        <a href="../" class="btn--nav">
-                            <i class="btn--nav__icon icon-house" aria-hidden="true"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="../bookmarks/" class="btn--nav btn--nav--active">
-                            <i class="btn--nav__icon icon-bookmark" aria-hidden="true"></i>
-                            <span>Bookmarks</span>
-                        </a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="../profile/" class="btn--nav">
-                            <i class="btn--nav__icon icon-circle-user" aria-hidden="true"></i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
+    <!-- NAVIGATION -->
+    <footer>
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__list-item">
+                    <a href="../" class="navigation__link">
+                        <i class="icon-house" aria-hidden="true"></i>
+                        <span>Home </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="../bookmarks/" class="navigation__link navigation__link--active">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                        <span>Bookmarks </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="../profile/" class="navigation__link">
+                        <i class="icon-circle-user" aria-hidden="true"></i>
+                        <span>Profile </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
-    </div>
 </body>
 
 </html>
