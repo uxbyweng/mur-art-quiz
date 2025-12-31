@@ -1,67 +1,108 @@
 /* BUTTON STANDARD */
 .btn {
-    background-color: var(--accent-secondary);
-    border: 3px solid var(--accent-secondary);
-    border-radius: 4px;
-    color: var(--text-color);
-    line-height: 1.2;
     text-align: center;
     text-decoration: none;
-    padding: 3px 6px 3px 6px;
-    font-size: 14px;
 }
 
 .btn:hover {
     border: 3px solid var(--accent-secondary-dark);
-    color: var(--text-color);
+    color: var(--text-color-light);
 }
-.btn--false:active {
-    background-color: var(--color-error);
-    color: var(--text-color);
+
+/* BUTTON QUIZCARD */
+.btn--choice {
+    background: rgb(0, 150, 190);
+    background: linear-gradient(180deg, rgb(0, 120, 160) 0%, rgb(0, 150, 190) 100%);
+    border: 3px solid rgb(0, 150, 190);
+    border-radius: 10px;
+    color: var(--text-color-light);
+    display: grid;
+    align-items: center;
+    padding: 3px 6px 3px 6px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
 }
+.btn--choice:hover {
+    background: rgb(0, 130, 170);
+    background: linear-gradient(180deg, rgb(1, 100, 140) 0%, rgb(0, 130, 170) 100%);
+    border: 3px solid rgb(0, 130, 170);
+    cursor: pointer;
+}
+
+.btn--choice[isCorrect="false"]:active,
+.btn--choice[isCorrect="false"]:focus {
+    background: rgb(190, 0, 0);
+    background: linear-gradient(180deg, rgb(190, 0, 0) 0%, rgb(129, 0, 0) 100%);
+    border: 3px solid rgb(190, 0, 0);
+    border-radius: 10px;
+    color: var(--text-color-light);
+    display: grid;
+    align-items: center;
+    padding: 3px 6px 3px 6px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
+}
+
+.btn--choice[isCorrect="true"]:active,
+.btn--choice[isCorrect="true"]:focus {
+    background: rgb(0, 190, 0);
+    background: linear-gradient(180deg, rgb(0, 190, 0) 0%, rgb(0, 130, 0) 100%);
+    border: 3px solid rgb(0, 190, 0);
+    border-radius: 10px;
+    color: var(--text-color-light);
+    display: grid;
+    align-items: center;
+    padding: 3px 6px 3px 6px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
+}
+
 .btn--true:active {
     background-color: var(--color-success);
     color: var(--text-color-light);
 }
 
-/* BUTTON QUIZCARD */
-.btn--quizcard {
-    display: grid;
-    align-items: center;
-    margin: 5px;
+.btn--next {
+    display: block;
+    background: rgb(0, 150, 50);
+    background: linear-gradient(180deg, rgb(0, 250, 50) 0%, rgb(0, 150, 50) 100%);
+    border: 3px solid rgb(0, 200, 50);
+    border-radius: 10px;
+    color: var(--text-color-light);
+    padding: 3px 12px 3px 12px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
+    width: 100%;
+}
+.btn--next:hover,
+.btn--next:focus,
+.btn--next:active {
+    display: block;
+    background: rgb(0, 130, 30);
+    background: linear-gradient(180deg, rgb(0, 230, 30) 0%, rgb(0, 130, 30) 100%);
+    border: 3px solid rgb(0, 180, 20);
+    cursor: pointer;
+}
+.btn--disabled {
+    display: block;
+    filter: saturate(0);
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-/* BUTTON PILL */
-.btn--pill {
+/* BUTTON HASHTAG */
+.btn--hashtag {
     background-color: var(--color-gray-d);
     border: var(--color-gray-d);
     border-radius: 10px;
     font-size: 12px;
+    padding: 3px 10px 3px 10px;
 }
-.btn--pill:hover {
+.btn--hashtag:hover {
     background-color: var(--color-gray-b);
     border: var(--color-gray-b);
-}
-
-/* BUTTON NAV */
-.btn--nav {
-    color: var(--accent-secondary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
-.btn--nav:hover i,
-.btn--nav:hover span {
-    color: var(--accent-primary);
-}
-.btn--nav--active i,
-.btn--nav--active span {
-    color: var(--accent-primary);
-}
-.btn--nav__icon {
-    margin-top: 10px;
-    color: var(--accent-secondary);
-    font-size: 44px;
-    line-height: 1;
 }

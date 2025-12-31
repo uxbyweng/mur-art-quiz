@@ -13,7 +13,7 @@
     --accent-secondary: #00d5ff;
     --accent-secondary-dark: #006699;
     --background-light: #ffffff;
-    --background-dark: #000000;
+    --background-dark: 0, 73, 151;
     --text-color-dark: #000000;
     --text-color-light: #ffffff;
     --headline-color-dark: #000000;
@@ -25,7 +25,7 @@
     --color-gray-6: #666;
     --color-white: #fff;
     /* Standard = Light */
-    --background-color: var(--background-light);
+    --background-color: var(--background-dark);
     --text-color: var(--text-color-dark);
     --headline-color: var(--headline-color-dark);
 }
@@ -34,8 +34,8 @@ html,
 body {
     font-family: var(--font-body-text);
     color: var(--text-color);
-    background-color: var(--background-color);
-    background-image: url("../../assets/images/bg-mur-art.jpg");
+    background-color: rgba(var(--background-color), 1);
+    /*background-image: url("../../assets/images/bg-mur-art.jpg");*/
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -45,9 +45,9 @@ body {
 }
 
 body:has(#darkmode:checked) {
-    --background-color: var(--background-darkmode);
-    --text-color: var(--text-color-darkmode);
-    --headline-color: var(--headline-color-darkmode);
+    --background-color: var(--background-dark);
+    --text-color: var(--text-color-dark);
+    --headline-color: var(--headline-color-dark);
 }
 
 h1,
@@ -86,29 +86,34 @@ p {
 
 /* MAIN PAGE AREAS */
 header {
+    background: linear-gradient(to bottom, rgba(var(--background-color), 1), rgba(var(--background-color), 0.5));
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 3;
     display: flex;
     justify-content: center;
-    /* CSS GRADIENT FROM: https://cssgradient.io/ */
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    /* CSS GRADIENT FROM: https://cssgradient.io/ 
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%);*/
     height: 100px;
 }
 main {
     align-items: stretch;
-    background: rgba(0, 0, 0, 0.1) 50%;
-    padding: 30px 30px 120px 30px;
+    background-color: rgba(var(--background-color), 1);
+    padding: 40px 30px 120px 30px;
     height: auto;
 }
 section {
     margin: 0 0 30px 0;
 }
 footer {
+    background: linear-gradient(to bottom, rgba(var(--background-color), 0.5), rgba(var(--background-color), 1));
+    backdrop-filter: blur(10px);
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 430px;
+    z-index: 3;
+    /* max-width: 430px; */
 }
 
 /* OTHER GLOBAL CLASSES */

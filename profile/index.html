@@ -9,102 +9,100 @@
 </head>
 
 <body>
-    <div class="app">
 
-        <!-- HEADER / LOGO -->
-        <header>
-            <div class="logo">
-                <div class="logo__image">
-                    <a href="/">
-                        <img src="../assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
-                    </a>
-                </div>
-                <div class="logo__claim">
-                    <p class="logo__claim-text invert">The Street Artist Quiz</p>
-                </div>
+    <!-- HEADER / LOGO -->
+    <header>
+        <div class="logo">
+            <div class="logo__image">
+                <a href="/">
+                    <img src="../assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
+                </a>
             </div>
-        </header>
+            <div class="logo__claim">
+                <h1 class="logo__claim-text invert">Street Artist Quiz</h1>
+            </div>
+        </div>
+    </header>
 
-        <!-- CONTENT BEREICH -->
-        <main>
-            <!-- TITLE  -->
-            <section class="page-title">
-                <h1 class="invert">
-                    Profile.
-                </h1>
-            </section>
+    <!-- CONTENT BEREICH -->
+    <main>
+        <!-- TITLE  -->
+        <section class="page-title">
+            <h1 class="invert">
+                Profile.
+            </h1>
+        </section>
 
-            <!-- USER PROFILE -->
-            <section class="profile">
+        <!-- USER PROFILE -->
+        <section class="profile">
 
-                <div class="profile__user">
-                    <img src="../assets/images/profile-image-weng.jpg" class="profile__image" width="70" height="70"
-                        alt="Profile Image: Karsten Weng">
-                    <h2 class="profile__name">
-                        Karsten Weng
-                    </h2>
-                </div>
+            <div class="profile__user">
+                <img src="../assets/images/profile-image-weng.jpg" class="profile__image" width="70" height="70"
+                    alt="Profile Image: Karsten Weng">
+                <h2 class="profile__name">
+                    Karsten Weng
+                </h2>
+            </div>
 
-                <div class="profile__details">
-                    <h3 class="invert">
-                        About me
-                    </h3>
-                    <p>
-                        Frontend Developer focused on performance, accessibility, and maintainable UI — bridging design
-                        and engineering.
-                    </p>
-                    <div class="profile__counter">
-                        <div class="profile__questions">
-                            <i class="icon-circle-question-mark"></i>
-                            <number>3</number>
-                        </div>
-                        <div class="profile__bookmarks">
-                            <i class="icon-bookmark"></i>
-                            <number>2</number>
-                        </div>
+            <div class="profile__details">
+                <h3 class="invert">
+                    About me
+                </h3>
+                <p>
+                    Frontend Developer focused on performance, accessibility, and maintainable UI — bridging design
+                    and engineering.
+                </p>
+                <div class="profile__counter">
+                    <div class="profile__questions">
+                        <i class="icon-circle-question-mark"></i>
+                        <number>3</number>
+                    </div>
+                    <div class="profile__bookmarks">
+                        <i class="icon-bookmark"></i>
+                        <number>2</number>
                     </div>
                 </div>
+            </div>
 
-                <div class="profile__settings">
-                    <h3 class="invert">
-                        Settings
-                    </h3>
-                    <p>
-                        <label for="darkmode">Dark Mode</label>
-                        <input type="checkbox" id="darkmode" />
-                    </p>
-                </div>
-            </section>
+            <div class="profile__settings">
+                <h3 class="invert">
+                    Settings
+                </h3>
+                <p>
+                    <label for="darkmode">Dark Mode</label>
+                    <input type="checkbox" id="darkmode" />
+                </p>
+            </div>
+        </section>
 
-        </main>
+    </main>
 
-        <!-- NAVIGATION -->
-        <footer>
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__list-item">
-                        <a href="../" class="btn--nav">
-                            <i class="btn--nav__icon icon-house" aria-hidden="true"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="../bookmarks/" class="btn--nav">
-                            <i class="btn--nav__icon icon-bookmark" aria-hidden="true"></i>
-                            <span>Bookmarks</span>
-                        </a>
-                    </li>
-                    <li class="navigation__list-item">
-                        <a href="../profile/" class="btn--nav btn--nav--active">
-                            <i class="btn--nav__icon icon-circle-user" aria-hidden="true"></i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
+    <!-- NAVIGATION -->
+    <footer>
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__list-item">
+                    <a href="../" class="navigation__link">
+                        <i class="icon-house" aria-hidden="true"></i>
+                        <span>Home </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="../bookmarks/" class="navigation__link navigation__link--active">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                        <span>Bookmarks </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="../profile/" class="navigation__link">
+                        <i class="icon-circle-user" aria-hidden="true"></i>
+                        <span>Profile </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
-    </div>
 </body>
 
 </html>
