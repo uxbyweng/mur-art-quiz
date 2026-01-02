@@ -2,7 +2,6 @@
 .logo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -10,12 +9,15 @@
     padding: 10px 0 0 0;
 }
 .logo__claim {
-    padding: 5px;
-    border-top: 1px solid var(--color-gray-b);
-    border-bottom: 1px solid var(--color-gray-b);
-    color: var(--text-color);
+    background: var(--black);
+    padding: 7px 20px;
+    border: 1px solid var(--accent-secondary);
+    border-radius: 10px;
+    /* border-top: 1px solid var(--color-gray-b);
+    border-bottom: 1px solid var(--color-gray-b); */
 }
+
 .logo__claim-text {
-    font-size: 18px;
-    padding: 5px;
+    color: var(--accent-secondary);
+    font-size: 16px;
 }
