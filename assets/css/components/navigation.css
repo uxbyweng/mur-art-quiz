@@ -12,7 +12,7 @@
 
 /* BUTTON NAV */
 .navigation__link {
-    color: var(--accent-secondary);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -4,12 +4,6 @@
     text-decoration: none;
 }
 
-.btn:hover {
-    border: 3px solid var(--accent-secondary-dark);
-    color: var(--text-color-light);
-}
-
-/* BUTTON QUIZCARD */
 .btn--choice {
     background: rgb(0, 150, 190);
     background: linear-gradient(180deg, rgb(0, 120, 160) 0%, rgb(0, 150, 190) 100%);
@@ -63,46 +57,4 @@
 .btn--true:active {
     background-color: var(--color-success);
     color: var(--text-color-light);
-}
-
-.btn--next {
-    display: block;
-    background: rgb(0, 150, 50);
-    background: linear-gradient(180deg, rgb(0, 250, 50) 0%, rgb(0, 150, 50) 100%);
-    border: 3px solid rgb(0, 200, 50);
-    border-radius: 10px;
-    color: var(--text-color-light);
-    padding: 3px 12px 3px 12px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 2.5;
-    width: 100%;
-}
-.btn--next:hover,
-.btn--next:focus,
-.btn--next:active {
-    display: block;
-    background: rgb(0, 130, 30);
-    background: linear-gradient(180deg, rgb(0, 230, 30) 0%, rgb(0, 130, 30) 100%);
-    border: 3px solid rgb(0, 180, 20);
-    cursor: pointer;
-}
-.btn--disabled {
-    display: block;
-    filter: saturate(0);
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-/* BUTTON HASHTAG */
-.btn--hashtag {
-    background-color: var(--color-gray-d);
-    border: var(--color-gray-d);
-    border-radius: 10px;
-    font-size: 12px;
-    padding: 3px 10px 3px 10px;
-}
-.btn--hashtag:hover {
-    background-color: var(--color-gray-b);
-    border: var(--color-gray-b);
 }
