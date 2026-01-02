@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <base href="/mur-art-quiz/">
+    <title>mural.art - Bookmarks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>mural.art - Bookmarks</title>
+    <script src="assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -32,9 +33,8 @@
 
 
         <!-- BOOKMARKS  -->
-        <section class="quiz">
+        <section>
 
-            <!-- QUESTION #01 -->
             <article class="card" id="q1">
                 <div class="card__top">
                     <img class="card__img" src="assets/images/mural-01-victor-ash.jpg"
@@ -44,8 +44,9 @@
                         <i class="icon-bookmark" aria-hidden="true"></i>
                     </a>
                     <h2 class="card__title">Who is the artist of this mural?</h2>
+                    <h2 class="card__title card__title--success">Coreect answer!</h2>
                 </div>
-                <div class="card__choice" role="radiogroup" aria-label="Answers">
+                <div class="card__choice" role="radiogroup">
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
                         aria-checked="false">Herakut</button>
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
@@ -53,7 +54,7 @@
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
                         aria-checked="false">Invader</button>
                 </div>
-                <div class="card__answer" style="display: none;">
+                <div class="card__answer">
                     <p>
                         This large black-and-white mural with the title <em>"Astronaut/Cosmonaut"</em> was created by
                         Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city
