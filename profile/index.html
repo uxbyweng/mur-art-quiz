@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <base href="/mur-art-quiz/">
+    <title>mural.art - Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>mural.art - Profile</title>
+    <script src="assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -29,46 +30,41 @@
 
     <!-- CONTENT BEREICH -->
     <main>
-
-        <!-- USER PROFILE -->
-        <section class="profile">
-
-            <div class="profile__user">
-                <img src="assets/images/profile-image-weng.jpg" class="profile__image" width="70" height="70"
-                    alt="Profile Image: Karsten Weng">
-                <h2>
-                    Karsten Weng
-                </h2>
-            </div>
-
-            <div class="profile__details">
-                <h3>
-                    About me
-                </h3>
-                <p>
-                    Frontend Developer focused on performance and accessibility.
-                </p>
-            </div>
-
-            <div class="profile__details">
-                <h3>
-                    Stats
-                </h3>
-                <i class="icon-circle-question-mark"></i> Questions total: <number>3</number><br>
-                <i class="icon-bookmark"></i> Saved questions: <number>2</number>
-            </div>
-
-            <div class="profile__details">
-                <h3>
-                    Settings
-                </h3>
-                <p>
-                    <label for="darkmode">Dark Mode</label>
-                    <input type="checkbox" id="darkmode" />
-                </p>
-            </div>
+        <section>
+            <article class="card card--profile">
+                <div class="card__user">
+                    <img src="assets/images/profile-image-weng.jpg" class="card__image" width="70" height="70"
+                        alt="Profile Image: Karsten Weng">
+                    <h2>
+                        Karsten Weng
+                    </h2>
+                </div>
+                <div class="card__details">
+                    <h3>
+                        About me
+                    </h3>
+                    <p>
+                        Frontend Developer focused on performance and accessibility.
+                    </p>
+                </div>
+                <div class="card__details">
+                    <h3>
+                        Stats
+                    </h3>
+                    <i class="icon-circle-question-mark"></i> Questions total: <number>3</number><br>
+                    <i class="icon-bookmark"></i> Saved questions: <number>2</number>
+                </div>
+                <div class="card__details">
+                    <h3>
+                        Settings
+                    </h3>
+                    <p>
+                        <label for="darkmode">Dark Mode</label>
+                        <input type="checkbox" id="darkmode" />
+                    </p>
+                </div>
+            </article>
         </section>
-
     </main>
 
     <!-- NAVIGATION -->

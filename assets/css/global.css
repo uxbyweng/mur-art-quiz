@@ -78,6 +78,19 @@ p {
     color: var(--text-color);
 }
 
+/* GRID */
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    section {
+        justify-items: center;
+    }
+}
+
 /* MAIN PAGE AREAS */
 header {
     background-color: var(--background-color);
