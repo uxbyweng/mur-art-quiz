@@ -3,13 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- BASE URL HANDLING for mur-art.de vs. uxbyweng.github.io -->
+    <!-- BASE URL HANDLING (localhost/mur-art.de/uxbyweng.github.io) -->
     <script>
         (function () {
-            const repo = "mur-art-quiz";
-            const isGitHubPages = location.hostname.endsWith("github.io");
-            const base = isGitHubPages ? `/${repo}/` : "/";
-            document.write(`<base href="${base}">`);
+            const repoName = "mur-art-quiz";
+            const hostname = window.location.hostname; // Hostname ausllesen
+            const pathname = window.location.pathname; // Aktuellen Pfad auslesen
+            const isGitHubPages = hostname.endsWith("github.io"); // check if on GitHub Pages
+            const pathParts = pathname.split("/").filter(part => part !== ""); // Pfad in Teile zerlegen
+            const isSubPath = pathParts[0] === repoName; // check if on /mur-art-quiz/ 
+            let baseUrl; // Base-URL festlegen
+            if (isGitHubPages || isSubPath) {
+                baseUrl = `/${repoName}/`;
+            } else {
+                baseUrl = "/";
+            }
+            document.write(`<base href="${baseUrl}">`); // Base-URL in den <head> schreiben
         })();
     </script>
     <title>mural.art - Bookmarks</title>
