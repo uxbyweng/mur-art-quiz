@@ -46,8 +46,7 @@
 .card__tags {
     padding: 0 12px 12px 12px;
     display: flex;
-    flex-direction: raw;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
@@ -146,4 +145,8 @@
     color: var(--text-color-light);
     padding: 6px 8px;
     border-radius: 8px;
+}
+
+.card__title--success {
+    color: var(--accent-primary);
 }

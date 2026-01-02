@@ -12,7 +12,6 @@
     --accent-primary: #00ff00;
     --accent-secondary: #00d5ff;
     --accent-secondary-dark: #006699;
-    --backround-white: var(--white);
     --background-light: #0037dc;
     --background-dark: #021c6a;
     --text-color-dark: #000000;
@@ -28,6 +27,7 @@
     --black: #000;
     --dark-blue: #001042;
     /* Standard = light */
+    --backround-white: var(--accent-secondary);
     --background-color: var(--background-light);
     --text-color: var(--text-color-dark);
     --headline-color: var(--headline-color-dark);
@@ -107,6 +107,6 @@ footer {
 }
 
 /* OTHER GLOBAL CLASSES */
-.invert {
-    filter: invert(1);
+.success {
+    color: var(--accent-primary);
 }

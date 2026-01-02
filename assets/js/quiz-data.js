@@ -10,7 +10,7 @@ const quizData = [
         mural: {
             title: "Astronaut / Cosmonaut",
             description:
-                "“Astronaut / Cosmonaut” is a large black-and-white mural by Victor Ash, created in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city references the Cold War space race and highlights the smallness of human power.",
+                "This large black-and-white mural with the title <em>'Astronaut/Cosmonaut'</em> was created by Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city references the Cold War and highlights the smallness of human power. The mural is located at <a href='https://maps.app.goo.gl/wyRa3FDjhuHfaAch6'>Mariannenstraße 8, 10999 Berlin</a>",
             hashtags: ["astronaut", "mural", "kreuzberg"],
             image: "./assets/images/mural-01-victor-ash.jpg",
         },
@@ -47,7 +47,7 @@ const quizData = [
         mural: {
             title: "My Home Might Be No Palace. But We Can Share It If You Like.",
             description:
-                "“My Home Might Be No Palace. But We Can Share It If You Like.” is a mural by Herakut that reflects the duo’s signature mix of vulnerability, empathy, and social commentary. The work addresses themes of belonging, hospitality, and human connection, contrasting modest living conditions with emotional openness. Like much of Herakut’s work, the mural combines figurative imagery with handwritten text to create an intimate, inviting message in public space.",
+                "“My Home Might Be No Palace. But We Can Share It If You Like.” is a mural by Herakut that reflects the duo’s signature mix of vulnerability, empathy, and social commentary. Like much of Herakut’s work, the mural combines figurative imagery with handwritten text to create an intimate, inviting message in public space.",
             hashtags: ["empathy", "mural", "kreuzberg"],
             image: "./assets/images/mural-02-herakut.jpg",
         },
@@ -84,7 +84,7 @@ const quizData = [
         mural: {
             title: "Maxim Memorial",
             description:
-                "“My Home Might Be No Palace. But We Can Share It If You Like.” is a mural by Herakut that reflects the duo’s signature mix of vulnerability, empathy, and social commentary. The work addresses themes of belonging, hospitality, and human connection, contrasting modest living conditions with emotional openness. Like much of Herakut’s work, the mural combines figurative imagery with handwritten text to create an intimate, inviting message in public space.",
+                "“This mural, titled <em>“Maxim memorial-wall – ‘36 Boy’”</em>, honors Maxim (Attila Murat Aydın), a key figure in Berlin’s early hip-hop scene and co-founder of the 36 Boys crew. Painted by @stereoheat for the 2021 @berlinmuralfest at Naunynstraße 52, it celebrates his influence on graffiti, breakdance, and rap culture in SO36.",
             hashtags: ["36boys", "mural", "kreuzberg"],
             image: "./assets/images/mural-03-stereoheat.jpg",
         },

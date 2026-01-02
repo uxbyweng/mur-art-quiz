@@ -11,6 +11,9 @@
     color: var(--text-color);
     margin: 5px 0 5px 0;
 }
+.profile number {
+    font-weight: 700;
+}
 .profile__user {
     display: flex;
     flex-direction: row;
