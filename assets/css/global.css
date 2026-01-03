@@ -46,9 +46,9 @@ body {
     scrollbar-gutter: stable;
 }
 
-body:has(#darkmode:checked) {
+body.dark {
     --background-color: var(--background-dark);
-    --text-color: var(--text-color-light);
+    --text-color: var(--text-color-dark);
     --headline-color: var(--headline-color-dark);
     --backround-white: var(--dark-blue);
 }
@@ -117,9 +117,4 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 3;
-}
-
-/* OTHER GLOBAL CLASSES */
-.success {
-    color: var(--accent-primary);
 }

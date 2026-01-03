@@ -19,13 +19,28 @@
     flex-direction: column;
     gap: 10px;
 }
-
-.card__answer {
+.card__other-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.card__correct-answer,
+.card__wrong-answer {
     padding: 0 15px 0 15px;
-    min-height: 186px;
+}
+.card__wrong-answer p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__correct-answer p {
+    min-height: 180px;
 }
 
-.card__answer p:nth-child(2) {
+.card__correct-answer p:nth-child(2),
+.card__wrong-answer p:nth-child(2) {
     margin-top: 10px;
 }
 
@@ -36,7 +51,7 @@
 }
 
 .card__tags {
-    padding: 0 12px 12px 12px;
+    padding: 10px 12px 10px 12px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -68,6 +83,7 @@
     border-radius: 10px;
     color: var(--text-color-light);
     padding: 3px 12px 3px 12px;
+    margin: 5px 0 5px 0;
     font-size: 16px;
     font-weight: 700;
     line-height: 2.5;
@@ -108,7 +124,9 @@
     pointer-events: none;
 }
 
-.card__title {
+.card__question,
+.card__success-message,
+.card__error-message {
     position: absolute;
     left: 10px;
     right: 10px;
@@ -120,28 +138,56 @@
     border-radius: 8px;
 }
 
-.card__title--success {
-    color: var(--accent-primary);
-}
-
 /* CARD BOOKMARK */
 .card__bookmark {
+    border: none;
+    background: transparent;
+    box-shadow: none;
     position: absolute;
-    top: 15px;
+    top: 10px;
     text-decoration: none;
     right: 15px;
     z-index: 1;
+    animation: removeBookmark 0.5s linear 1;
+}
+@keyframes removeBookmark {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 0.5;
+    }
+    100% {
+        scale: 1;
+    }
+}
+.card__bookmark--active {
+    color: rgb(0, 255, 0);
+    font-size: 36px;
+    animation: addBookmark 0.5s linear 1;
+}
+@keyframes addBookmark {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.5;
+    }
+    100% {
+        scale: 1;
+    }
 }
 .card__bookmark .icon-bookmark {
-    color: white;
+    color: rgb(213, 213, 213);
     font-size: 30px;
 }
 .card__bookmark .icon-bookmark:hover {
     color: rgb(0, 255, 0);
+    cursor: pointer;
 }
 .card__bookmark--active .icon-bookmark {
     color: rgb(0, 255, 0);
-    font-size: 30px;
+    font-size: 36px;
 }
 
 /* CARD PROFILE */

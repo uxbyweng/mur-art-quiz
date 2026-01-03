@@ -21,11 +21,10 @@
             document.write(`<base href="${baseUrl}">`); // Base-URL in den <head> schreiben
         })();
     </script>
-    <title>mural.art - Profile</title>
+    <title>mural.art - Create</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/site.js" defer></script>
-    <script src="assets/js/profile.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +33,7 @@
     <header>
         <div class="logo">
             <div class="logo__image">
-                <a href="">
+                <a href="#" onclick="event.preventDefault()">
                     <img src="assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
                 </a>
             </div>
@@ -54,7 +53,7 @@
                     <img src="assets/images/profile-image-weng.jpg" class="card__image" width="70" height="70"
                         alt="Profile Image: Karsten Weng">
                     <h2>
-                        Karsten Weng
+                        Add new question
                     </h2>
                 </div>
                 <div class="card__details">
@@ -102,13 +101,13 @@
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="create/" class="navigation__link">
+                    <a href="create/" class="navigation__link navigation__link--active">
                         <i class="icon-circle-plus" aria-hidden="true"></i>
                         <span>Create </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="profile/" class="navigation__link navigation__link--active">
+                    <a href="profile/" class="navigation__link">
                         <i class="icon-circle-user" aria-hidden="true"></i>
                         <span>Profile </span>
                     </a>
