@@ -1,0 +1,15 @@
+/* UTILITY CLASSES */
+strong {
+    font-weight: 700;
+}
+.success {
+    color: var(--color-success);
+}
+
+.error {
+    color: var(--color-error);
+}
+
+.hidden {
+    display: none;
+}

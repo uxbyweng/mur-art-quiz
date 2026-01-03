@@ -24,12 +24,12 @@
     <title>mur.art - The Street Artist Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
 </head>
 
-<body>
+<body data-js="root" class="dark">
 
-    <!-- HEADER / LOGO -->
+    <!-- HEADER (LOGO) -->
     <header>
         <div class="logo">
             <div class="logo__image">
@@ -45,7 +45,7 @@
         </div>
     </header>
 
-    <!-- CONTENT BEREICH -->
+    <!-- MAIN (QUESTIONS)-->
     <main>
 
         <section class="quiz">
@@ -54,35 +54,103 @@
                 <div class="card__top">
                     <img class="card__img" src="assets/images/mural-01-victor-ash.jpg"
                         alt="Foto eines Wandgemäldes an einer Hausfassade." />
-                    <a href="bookmarks/" class="card__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                    <button class="card__bookmark" aria-label="Zu Lesezeichen hinzufügen" data-js="add-bookmark">
                         <i class="icon-bookmark" aria-hidden="true"></i>
-                    </a>
-                    <h2 class="card__title">Who is the artist of this mural?</h2>
-                    <h2 class="card__title card__title--success">Coreect answer!</h2>
+                    </button>
+                    <h2 class="card__question">Who is the artist of this mural?</h2>
                 </div>
                 <div class="card__choice" role="radiogroup">
-                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
-                        aria-checked="false">Herakut</button>
-                    <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
-                        aria-checked="false">Victor Ash</button>
-                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
-                        aria-checked="false">Invader</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false" aria-checked="false"
+                        data-js="answer-button">Herakut</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="true" aria-checked="false"
+                        data-js="answer-button">Victor Ash</button>
+                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false" aria-checked="false"
+                        data-js="answer-button">Invader</button>
                 </div>
-                <div class="card__answer">
+                <div class="card__correct-answer hidden">
                     <p>
-                        This large black-and-white mural with the title <em>"Astronaut/Cosmonaut"</em> was created by
-                        Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city
+                        <strong class="success">Correct answer!</strong> This large black-and-white mural with the title
+                        <em>"Astronaut/Cosmonaut"</em> was created by
+                        <strong>Victor Ash</strong> in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above
+                        the city
                         references the Cold War and highlights the smallness of human power. The mural is located at
                         Mariannenstraße 8, 10999 Berlin
                     </p>
+                    <a href="#q2" class="card__next">Next Question</a>
+                </div>
+                <div class="card__wrong-answer hidden">
+                    <p>
+                        <strong class="error">Wrong answer!</strong>
+                        <svg width="100" height="109" viewBox="0 0 300 326" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="sadman">
+                                <path id="u1"
+                                    d="M149.846 266.418C216.978 266.418 271.4 211.982 271.4 144.831C271.4 77.6808 216.978 23.2445 149.846 23.2445C82.713 23.2445 28.2913 77.6808 28.2913 144.831C28.2913 211.982 82.713 266.418 149.846 266.418Z"
+                                    fill="#810202" />
+                                <path id="t1"
+                                    d="M73.3196 154.592C76.3385 150.976 80.1141 148.068 84.3798 146.073C88.6455 144.078 93.2972 143.043 98.0063 143.043C102.715 143.043 107.367 144.078 111.633 146.073C115.898 148.068 119.674 150.976 122.693 154.592C127.859 149.659 131.429 143.292 132.944 136.311C134.459 129.33 133.849 122.055 131.193 115.424C128.536 108.793 123.956 103.11 118.041 99.1066C112.126 95.1035 105.148 92.9641 98.0063 92.9641C90.8647 92.9641 83.8867 95.1035 77.9718 99.1066C72.0569 103.11 67.4761 108.793 64.8199 115.424C62.1636 122.055 61.5537 129.33 63.0686 136.311C64.5835 143.292 68.1539 149.659 73.3196 154.592Z"
+                                    fill="white" />
+                                <path id="s1"
+                                    d="M169.848 154.592C172.867 150.977 176.643 148.069 180.908 146.073C185.174 144.078 189.826 143.043 194.535 143.043C199.244 143.043 203.896 144.078 208.161 146.073C212.427 148.069 216.202 150.977 219.221 154.592C224.387 149.659 227.957 143.292 229.472 136.311C230.987 129.33 230.377 122.055 227.721 115.424C225.065 108.793 220.484 103.11 214.569 99.1067C208.654 95.1036 201.676 92.9641 194.535 92.9641C187.393 92.9641 180.415 95.1036 174.5 99.1067C168.585 103.11 164.005 108.793 161.348 115.424C158.692 122.055 158.082 129.33 159.597 136.311C161.112 143.292 164.682 149.659 169.848 154.592Z"
+                                    fill="white" />
+                                <path id="r1"
+                                    d="M96.8601 141.287C103.652 141.287 109.158 135.779 109.158 128.985C109.158 122.191 103.652 116.684 96.8601 116.684C90.068 116.684 84.562 122.191 84.562 128.985C84.562 135.779 90.068 141.287 96.8601 141.287Z"
+                                    fill="#004696" />
+                                <path id="q1"
+                                    d="M192.654 141.287C199.446 141.287 204.952 135.779 204.952 128.985C204.952 122.191 199.446 116.684 192.654 116.684C185.862 116.684 180.356 122.191 180.356 128.985C180.356 135.779 185.862 141.287 192.654 141.287Z"
+                                    fill="#004696" />
+                                <path id="p1"
+                                    d="M193.153 170.079C197.393 170.079 200.831 166.641 200.831 162.399C200.831 158.158 197.393 154.719 193.153 154.719C188.912 154.719 185.474 158.158 185.474 162.399C185.474 166.641 188.912 170.079 193.153 170.079Z"
+                                    fill="#FF6584" />
+                                <path id="o1"
+                                    d="M99.5526 170.079C103.793 170.079 107.231 166.641 107.231 162.399C107.231 158.158 103.793 154.719 99.5526 154.719C95.3121 154.719 91.8745 158.158 91.8745 162.399C91.8745 166.641 95.3121 170.079 99.5526 170.079Z"
+                                    fill="#FF6584" />
+                                <path id="n1"
+                                    d="M99.5526 193.486C103.793 193.486 107.231 190.047 107.231 185.806C107.231 181.564 103.793 178.125 99.5526 178.125C95.3121 178.125 91.8745 181.564 91.8745 185.806C91.8745 190.047 95.3121 193.486 99.5526 193.486Z"
+                                    fill="#FF6584" />
+                                <path id="m1"
+                                    d="M193.153 192.754C197.393 192.754 200.831 189.316 200.831 185.074C200.831 180.832 197.393 177.394 193.153 177.394C188.912 177.394 185.474 180.832 185.474 185.074C185.474 189.316 188.912 192.754 193.153 192.754Z"
+                                    fill="#FF6584" />
+                                <path id="l1" d="M144.483 146.619L133.758 193.108L151.633 175.228L144.483 146.619Z"
+                                    fill="#FF6584" />
+                                <path id="k1" d="M95.998 227.689L142 215.077L117.783 207.82L95.998 227.689Z"
+                                    fill="#FF6584" />
+                                <path id="j1" d="M134.583 213.3L173.836 240.407L163.807 217.196L134.583 213.3Z"
+                                    fill="#FF6584" />
+                                <path id="i1" d="M116.897 208.988L163.601 218.676L145.331 201.199L116.897 208.988Z"
+                                    fill="#FF6584" />
+                                <path id="h1"
+                                    d="M199.593 325.424L187.416 315.201L187.7 325.424H183.918L183.616 314.614L167.175 325.424H160.292L183.493 310.17L182.594 278.141L181.923 253.951L185.695 253.847L186.376 278.141L187.274 310.142L205.473 325.424H199.593Z"
+                                    fill="#3F3D56" />
+                                <path id="g1"
+                                    d="M142.386 325.424L130.209 315.201L130.493 325.424H126.721L126.419 314.614L109.978 325.424H103.095L126.286 310.17L125.388 278.141L124.717 253.951L128.498 253.847L129.179 278.141L130.068 310.142L148.267 325.424H142.386Z"
+                                    fill="#3F3D56" />
+                                <path id="f1"
+                                    d="M151.633 14.3043C148.298 14.3043 145.356 16.8958 143.388 20.8763C141.655 14.8908 138.012 10.7283 133.758 10.7283C133.468 10.757 133.182 10.8052 132.899 10.8725C131.264 4.48189 127.463 0 123.032 0C117.109 0 112.307 8.00539 112.307 17.8804C112.307 27.7555 117.109 35.7609 123.032 35.7609C123.321 35.7321 123.608 35.6839 123.891 35.6166C125.526 42.0072 129.327 46.4891 133.758 46.4891C137.093 46.4891 140.035 43.8976 142.002 39.9171C143.736 45.9026 147.379 50.0651 151.633 50.0651C157.557 50.0651 162.359 42.0598 162.359 32.1847C162.359 22.3097 157.557 14.3043 151.633 14.3043Z"
+                                    fill="#004696" />
+                                <path id="e1"
+                                    d="M35.7512 190.907C31.0563 190.907 26.4073 189.982 22.0698 188.185C17.7323 186.388 13.7911 183.754 10.4713 180.433C7.15144 177.113 4.51803 173.17 2.72136 168.832C0.924694 164.493 -2.59293e-05 159.843 -2.59293e-05 155.147V137.266C-2.59293e-05 127.782 3.76659 118.686 10.4713 111.979C17.1759 105.273 26.2694 101.505 35.7512 101.505L35.7512 190.907Z"
+                                    fill="#004696" />
+                                <path id="d1"
+                                    d="M263.94 101.505C268.635 101.505 273.284 102.43 277.621 104.227C281.959 106.025 285.9 108.659 289.22 111.979C292.54 115.3 295.173 119.242 296.97 123.581C298.767 127.92 299.691 132.57 299.691 137.266V155.147C299.691 159.843 298.767 164.493 296.97 168.832C295.173 173.17 292.54 177.113 289.22 180.433C285.9 183.754 281.959 186.388 277.621 188.185C273.284 189.982 268.635 190.907 263.94 190.907L263.94 101.505Z"
+                                    fill="#004696" />
+                                <path id="c1"
+                                    d="M282.674 140.076H277.002C277.002 68.1182 218.476 9.57603 146.537 9.57603C74.5983 9.57603 16.0718 68.1182 16.0718 140.076H10.3994C10.3994 64.9894 71.4704 3.90213 146.537 3.90213C221.604 3.90213 282.674 64.9894 282.674 140.076Z"
+                                    fill="#004696" />
+                                <ellipse id="b1" cx="148.181" cy="227.864" rx="59.2313" ry="26.332" fill="#FF6584" />
+                                <ellipse id="a1" cx="148.912" cy="233.715" rx="56.3063" ry="24.1377" fill="#810202" />
+                            </g>
+                        </svg>
+                    </p>
+                    <div class="card__other-buttons">
+                        <button href="#q2" class="card__next">Try again</button>
+                        <a href="#q2" class="card__next">Next Question</a>
+                    </div>
                 </div>
                 <div class="card__tags">
                     <a href="#" class="card__tag">#astronaut</a>
                     <a href="#" class="card__tag">#mural</a>
                     <a href="#" class="card__tag">#kreuzberg</a>
-                </div>
-                <div class="card__actions">
-                    <a href="#q2" class="card__next card__next--disabled">Next Question</a>
                 </div>
             </article>
 
@@ -90,11 +158,11 @@
                 <div class="card__top">
                     <img class="card__img" src="assets/images/mural-02-herakut.jpg"
                         alt="Foto eines Wandgemäldes an einer Hausfassade." />
-                    <a href="bookmarks/" class="card__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                    <button class="card__bookmark" aria-label="Zu Lesezeichen hinzufügen" data-js="add-bookmark">
                         <i class="icon-bookmark" aria-hidden="true"></i>
-                    </a>
-                    <h2 class="card__title">Who is the artist of this mural?</h2>
-                    <h2 class="card__title card__title--success">Coreect answer!</h2>
+                    </button>
+                    <h2 class="card__question">Who is the artist of this mural?</h2>
+                    <h2 class="card__question hidden">Coreect answer!</h2>
                 </div>
                 <div class="card__choice" role="radiogroup">
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
@@ -104,7 +172,7 @@
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
                         aria-checked="false">FinDac</button>
                 </div>
-                <div class="card__answer">
+                <div class="card__answer hidden">
                     <p>
                         “My Home Might Be No Palace. But We Can Share It If You Like.” is a mural by Herakut that
                         reflects the duo’s signature mix of vulnerability, empathy, and social commentary. Like much of
@@ -126,11 +194,11 @@
                 <div class="card__top">
                     <img class="card__img" src="assets/images/mural-03-stereoheat.jpg"
                         alt="Foto eines Wandgemäldes an einer Hausfassade." />
-                    <a href="bookmarks/" class="card__bookmark" aria-label="Zu Lesezeichen hinzufügen">
+                    <button class="card__bookmark" aria-label="Zu Lesezeichen hinzufügen" data-js="add-bookmark">
                         <i class="icon-bookmark" aria-hidden="true"></i>
-                    </a>
-                    <h2 class="card__title">Who is the artist of this mural?</h2>
-                    <h2 class="card__title card__title--success">Coreect answer!</h2>
+                    </button>
+                    <h2 class="card__question">Who is the artist of this mural?</h2>
+                    <h2 class="card__question hidden">Coreect answer!</h2>
                 </div>
                 <div class="card__choice" role="radiogroup">
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
@@ -140,7 +208,7 @@
                     <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
                         aria-checked="false">Stereoheat</button>
                 </div>
-                <div class="card__answer">
+                <div class="card__answer hidden">
                     <p>
                         This mural, titled <em>“Maxim memorial-wall – ‘36 Boy’”</em>, honors Maxim (Attila Murat Aydın),
                         a key figure in Berlin’s early hip-hop scene and co-founder of the 36 Boys crew. Painted by
@@ -162,7 +230,7 @@
 
     </main>
 
-    <!-- NAVIGATION -->
+    <!-- FOTTER (NAVI) -->
     <footer>
         <nav class="navigation">
             <ul class="navigation__list">
@@ -176,6 +244,12 @@
                     <a href="bookmarks/" class="navigation__link">
                         <i class="icon-bookmark" aria-hidden="true"></i>
                         <span>Bookmarks </span>
+                    </a>
+                </li>
+                <li class="navigation__list-item">
+                    <a href="create/" class="navigation__link">
+                        <i class="icon-circle-plus" aria-hidden="true"></i>
+                        <span>Create </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
