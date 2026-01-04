@@ -1,60 +1,144 @@
-/* BUTTON STANDARD */
+/* BUTTON DEFAULT */
 .btn {
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 2.5;
+    padding: 3px 6px 3px 6px;
     text-align: center;
     text-decoration: none;
 }
+.btn:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
 
-.btn--choice {
+/* BTN BOOKMARK */
+.btn--bookmark {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    line-height: 1;
+    position: absolute;
+    padding: 0;
+    top: 10px;
+    right: 15px;
+    z-index: 1;
+    animation: removeBookmark 0.5s linear 1;
+}
+@keyframes removeBookmark {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 0.5;
+    }
+    100% {
+        scale: 1;
+    }
+}
+.btn--bookmark--active {
+    color: rgb(0, 255, 0);
+    font-size: 36px;
+    animation: addBookmark 0.5s linear 1;
+}
+@keyframes addBookmark {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.5;
+    }
+    100% {
+        scale: 1;
+    }
+}
+.btn--bookmark .icon-bookmark {
+    color: rgb(213, 213, 213);
+    font-size: 30px;
+}
+.btn--bookmark--active .icon-bookmark {
+    color: rgb(0, 255, 0);
+    font-size: 36px;
+}
+
+/* BTN BLUE */
+.btn--blue {
     background: rgb(0, 150, 190);
-    background: linear-gradient(180deg, rgb(0, 120, 160) 0%, rgb(0, 150, 190) 100%);
-    border: 3px solid rgb(0, 150, 190);
-    border-radius: 10px;
+    background: linear-gradient(180deg, rgb(0, 190, 200) 0%, rgb(0, 100, 120) 100%);
+    border: 3px solid rgb(0, 150, 160);
     color: var(--text-color-light);
     display: grid;
     align-items: center;
-    padding: 3px 6px 3px 6px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 2.5;
-}
-.btn--choice:hover {
-    background: rgb(0, 130, 170);
-    background: linear-gradient(180deg, rgb(1, 100, 140) 0%, rgb(0, 130, 170) 100%);
-    border: 3px solid rgb(0, 130, 170);
-    cursor: pointer;
 }
 
-.btn--choice[isCorrect="false"]:active,
-.btn--choice[isCorrect="false"]:focus {
+.btn--blue:hover {
+    background: rgb(0, 150, 190);
+    background: linear-gradient(180deg, rgb(0, 170, 200) 0%, rgb(0, 80, 120) 100%);
+    border: 3px solid rgb(0, 130, 140);
+}
+
+.btn--blue[isCorrect="false"]:active,
+.btn--blue[isCorrect="false"]:focus {
     background: rgb(190, 0, 0);
     background: linear-gradient(180deg, rgb(190, 0, 0) 0%, rgb(129, 0, 0) 100%);
     border: 3px solid rgb(190, 0, 0);
-    border-radius: 10px;
     color: var(--text-color-light);
     display: grid;
     align-items: center;
-    padding: 3px 6px 3px 6px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 2.5;
 }
 
-.btn--choice[isCorrect="true"]:active,
-.btn--choice[isCorrect="true"]:focus {
+.btn--blue[isCorrect="true"]:active,
+.btn--blue[isCorrect="true"]:focus {
     background: rgb(0, 190, 0);
     background: linear-gradient(180deg, rgb(0, 190, 0) 0%, rgb(0, 130, 0) 100%);
     border: 3px solid rgb(0, 190, 0);
-    border-radius: 10px;
     color: var(--text-color-light);
     display: grid;
     align-items: center;
-    padding: 3px 6px 3px 6px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 2.5;
 }
 
-.btn--true:active {
-    background-color: var(--color-success);
+/* BTN GREEN */
+.btn--green {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    background: rgb(0, 150, 50);
+    background: linear-gradient(180deg, rgb(0, 250, 50) 0%, rgb(0, 150, 50) 100%);
+    border: 3px solid rgb(0, 200, 50);
     color: var(--text-color-light);
+    margin: 5px 0 5px 0;
+    width: 100%;
+}
+.btn--green:hover,
+.btn--green:focus,
+.btn--green:active {
+    display: block;
+    background: rgb(0, 130, 30);
+    background: linear-gradient(180deg, rgb(0, 230, 30) 0%, rgb(0, 130, 30) 100%);
+    border: 3px solid rgb(0, 180, 20);
+}
+
+/* BTN DISABLED */
+.btn--disabled {
+    display: block;
+    filter: saturate(0);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* TAG BUTTON */
+.btn--tag {
+    background-color: var(--color-gray-d);
+    border: var(--color-gray-d);
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 3px 10px 3px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.btn--tag:hover {
+    background-color: var(--color-gray-b);
+    border: var(--color-gray-b);
 }

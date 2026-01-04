@@ -49,44 +49,82 @@
     <!-- CONTENT-BEREICH-->
     <main>
 
-
         <!-- BOOKMARKS  -->
         <section>
 
             <article class="card" id="q1">
                 <div class="card__top">
-                    <img class="card__img" src="assets/images/mural-01-victor-ash.jpg"
+                    <img src="assets/images/mural-01-victor-ash.jpg"
                         alt="Foto eines Wandgemäldes an einer Hausfassade." />
-                    <a href="bookmarks/" class="card__bookmark card__bookmark--active"
-                        aria-label="Zu Lesezeichen hinzufügen">
+                    <button class="btn btn--bookmark btn--bookmark--active" aria-label="Zu Lesezeichen hinzufügen"
+                        data-js="add-bookmark">
                         <i class="icon-bookmark" aria-hidden="true"></i>
-                    </a>
+                    </button>
                     <h2 class="card__question">Who is the artist of this mural?</h2>
-                    <h2 class="card__question hidden">Coreect answer!</h2>
                 </div>
                 <div class="card__choice" role="radiogroup">
-                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
-                        aria-checked="false">Herakut</button>
-                    <button class="btn btn--choice" type="button" role="radio" isCorrect="true"
-                        aria-checked="false">Victor Ash</button>
-                    <button class="btn btn--choice" type="button" role="radio" isCorrect="false"
-                        aria-checked="false">Invader</button>
+                    <button class="btn btn--blue" type="button" role="radio" isCorrect="false" aria-checked="false"
+                        data-js="answer-button">Herakut</button>
+                    <button class="btn btn--blue" type="button" role="radio" isCorrect="true" aria-checked="false"
+                        data-js="answer-button">Victor Ash</button>
+                    <button class="btn btn--blue" type="button" role="radio" isCorrect="false" aria-checked="false"
+                        data-js="answer-button">Invader</button>
                 </div>
-                <div class="card__answer">
-                    <p>
-                        This large black-and-white mural with the title <em>"Astronaut/Cosmonaut"</em> was created by
-                        Victor Ash in 2007 in Berlin-Kreuzberg. The faceless astronaut floating above the city
-                        references the Cold War and highlights the smallness of human power. The mural is located at
-                        Mariannenstraße 8, 10999 Berlin
+                <div class="card__answer hidden">
+                    <img src="assets/images/winner-fox.png" width="200">
+                    <h3 class="success">
+                        Correct answer!
+                    </h3>
+                    <p class="card__solution">
+                        The mural was created by <strong>Victor Ash</strong>.
                     </p>
+                    <div class="card__buttons">
+                        <button class="btn btn--blue hidden">Try&nbsp;again</button>
+                        <button class="btn btn--green">Next&nbsp;Question</button>
+                    </div>
                 </div>
                 <div class="card__tags">
-                    <a href="#" class="card__tag">#astronaut</a>
-                    <a href="#" class="card__tag">#mural</a>
-                    <a href="#" class="card__tag">#kreuzberg</a>
+                    <button class="btn btn--tag">#astronaut</button>
+                    <button href="#" class="btn btn--tag">#mural</button>
+                    <button href="#" class="btn btn--tag">#kreuzberg</button>
                 </div>
-                <div class="card__actions">
-                    <a href="#q2" class="card__next card__next--disabled">Next Question</a>
+            </article>
+
+            <article class="card" id="q2">
+                <div class="card__top">
+                    <img class="card__img" src="assets/images/mural-02-herakut.jpg"
+                        alt="Foto eines Wandgemäldes an einer Hausfassade." />
+                    <button class="btn btn--bookmark btn--bookmark--active" aria-label="Zu Lesezeichen hinzufügen"
+                        data-js="add-bookmark">
+                        <i class="icon-bookmark" aria-hidden="true"></i>
+                    </button>
+                    <h2 class="card__question">Who is the artist of this mural?</h2>
+                </div>
+                <div class="card__choice" role="radiogroup">
+                    <button class="btn btn--blue" type="button" role="radio" isCorrect="true" data-js="answer-button"
+                        aria-checked="false">Herakut</button>
+                    <button class="btn btn--blue" type="button" role="radio" isCorrect="false" data-js="answer-button"
+                        aria-checked="false">ROA</button>
+                    <button class="btn btn--blue" type="button" role="radio" isCorrect="false" data-js="answer-button"
+                        aria-checked="false">FinDac</button>
+                </div>
+                <div class="card__answer hidden">
+                    <img src="assets/images/winner-fox.png" width="200">
+                    <h3 class="success">
+                        Correct answer!
+                    </h3>
+                    <p class="card__solutionText">
+                        The mural was created by <strong>Herakut</strong>.
+                    </p>
+                    <div class="card__buttons">
+                        <button href="#q2" class="btn btn--blue hidden">Try&nbsp;again</button>
+                        <button href="#q2" class="btn btn--green">Next&nbsp;Question</button>
+                    </div>
+                </div>
+                <div class="card__tags">
+                    <a href="#" class="btn btn--tag">#home</a>
+                    <a href="#" class="btn btn--tag">#mural</a>
+                    <a href="#" class="btn btn--tag">#kreuzberg</a>
                 </div>
             </article>
 

@@ -17,51 +17,123 @@ document.addEventListener("click", event => {
     const addBookmark = event.target.closest('[data-js="add-bookmark"]');
     if (!addBookmark) return;
 
-    addBookmark.classList.toggle("card__bookmark--active");
+    addBookmark.classList.toggle("btn--bookmark--active");
 });
 
-// Question 01
-const correctButton1 = document.querySelector('#q1 .card__choice button[isCorrect="true"]');
-const wrongButtons1 = document.querySelectorAll('#q1 .card__choice button[isCorrect="false"]');
-const firstWrongButton1 = wrongButtons1[0];
-const secondWrongButton1 = wrongButtons1[1];
-const correctAnswer1 = document.querySelector("#q1 .card__correct-answer");
-const wrongAnswer1 = document.querySelector("#q1 .card__wrong-answer");
-const buttonGroup1 = document.querySelector("#q1 .card__choice");
+document.addEventListener("click", event => {
+    // wird ein answer button geklickt
+    const clickedButton = event.target.closest('[data-js="answer-button"]');
+    if (!clickedButton) return;
 
-// Question 02
-const correctButton2 = document.querySelector('#q2 .card__choice button[isCorrect="true"]');
-const wrongButtons2 = document.querySelectorAll('#q2 .card__choice button[isCorrect="false"]');
-const firstWrongButton2 = wrongButtons2[0];
-const secondWrongButton2 = wrongButtons2[1];
-const correctAnswer2 = document.querySelector("#q2 .card__correct-answer");
-const wrongAnswer2 = document.querySelector("#q2 .card__wrong-answer");
-const buttonGroup2 = document.querySelector("#q2 .card__choice");
+    // finde die zugehörige quiz-card
+    const card = clickedButton.closest(".card");
+    if (!card) return;
 
-// Question 03
-const correctButton3 = document.querySelector('#q3 .card__choice button[isCorrect="true"]');
-const wrongButtons3 = document.querySelectorAll('#q3 .card__choice button[isCorrect="false"]');
-const firstWrongButton3 = wrongButtons3[0];
-const secondWrongButton3 = wrongButtons3[1];
-const correctAnswer3 = document.querySelector("#q3 .card__correct-answer");
-const wrongAnswer3 = document.querySelector("#q3 .card__wrong-answer");
-const buttonGroup3 = document.querySelector("#q3 .card__choice");
+    // hole alle elememt in dieser card
+    const choiceGroup = card.querySelector(".card__choice");
+    const answerArea = card.querySelector(".card__answer");
+    const feedbackImage = card.querySelector(".card__feedback-image");
+    const feedbackText = card.querySelector(".card__feedback");
+    const solutionText = card.querySelector(".card__solution");
+    const originalSolutionHTML = solutionText.innerHTML;
+    const isCorrect = clickedButton.dataset.correct === "true";
 
-// Question 01
-correctButton1.addEventListener("click", () => {
-    buttonGroup1.classList.add("hidden");
-    correctAnswer1.classList.remove("hidden");
+    // buttons ausblenden und answer block einblenden
+    choiceGroup.classList.add("hidden");
+    answerArea.classList.remove("hidden");
+
+    // Feedback-Klassen sauber setzen (nicht toggle)
+    feedbackText.classList.remove("success", "error");
+
+    if (isCorrect) {
+        feedbackImage.src = "assets/images/winner-fox.png";
+        feedbackText.classList.add("success");
+        feedbackText.textContent = "Correct answer!";
+        solutionText.textContent = originalSolutionHTML;
+    } else {
+        feedbackImage.src = "assets/images/sad-fox.png";
+        feedbackText.classList.add("error");
+        feedbackText.textContent = "Wrong answer!";
+        solutionText.textContent = "Try again if you want.";
+    }
 });
 
-firstWrongButton1.addEventListener("click", () => {
-    buttonGroup1.classList.add("hidden");
-    wrongAnswer1.classList.remove("hidden");
-});
+// // Question 01
+// const answerButtonGroup1 = document.querySelector("#q1 .card__choice");
+// const answerButtonArray1 = document.querySelectorAll('#q1 [data-js="answer-button"]');
+// const answerButton1 = answerButtonArray1[0];
+// const answerButton2 = answerButtonArray1[1];
+// const answerButton3 = answerButtonArray1[2];
+// const answerArea1 = document.querySelector("#q1 .card__answer");
+// const feedbackImage = document.querySelector("#q1 .card__feedback-image");
+// const feedbackText = document.querySelector("#q1 .card__feedback");
+// const solutionText = document.querySelector("#q1 .card__solution");
 
-secondWrongButton1.addEventListener("click", () => {
-    buttonGroup1.classList.add("hidden");
-    wrongAnswer1.classList.remove("hidden");
-});
+// answerButton1.addEventListener("click", () => {
+//     const isCorrect = answerButton1.getAttribute("data-correct");
+//     if (isCorrect === "true") {
+//         answerButtonGroup1.classList.add("hidden");
+//         answerArea1.classList.remove("hidden");
+//         feedbackImage.setAttribute("src", "assets/images/winner-fox.png");
+//         feedbackText.classList.toggle("success");
+//         feedbackText.innerHTML = "Correct answer!";
+//     } else {
+//         answerButtonGroup1.classList.add("hidden");
+//         answerArea1.classList.remove("hidden");
+//         feedbackImage.setAttribute("src", "assets/images/sad-fox.png");
+//         feedbackText.classList.toggle("error");
+//         feedbackText.innerHTML = "Wrong answer!";
+//         solutionText.innerHTML = "Try again if you want.";
+//     }
+// });
+// answerButton2.addEventListener("click", () => {
+//     const isCorrect = answerButton2.getAttribute("data-correct");
+//     if (isCorrect === "true") {
+//         answerButtonGroup1.classList.add("hidden");
+//         answerArea1.classList.remove("hidden");
+//         feedbackImage.setAttribute("src", "assets/images/winner-fox.png");
+//         feedbackText.classList.toggle("success");
+//         feedbackText.innerHTML = "Correct answer!";
+//     } else {
+//         answerButtonGroup1.classList.add("hidden");
+//         answerArea1.classList.remove("hidden");
+//         feedbackImage.setAttribute("src", "assets/images/sad-fox.png");
+//         feedbackText.classList.toggle("error");
+//         feedbackText.innerHTML = "Wrong answer!";
+//         solutionText.innerHTML = "Try again if you want.";
+//     }
+// });
+// answerButton3.addEventListener("click", () => {
+//     const isCorrect = answerButton3.getAttribute("data-correct");
+//     if (isCorrect === "true") {
+//         answerButtonGroup1.classList.add("hidden");
+//         answerArea1.classList.remove("hidden");
+//         feedbackImage.setAttribute("src", "assets/images/winner-fox.png");
+//         feedbackText.classList.toggle("success");
+//         feedbackText.innerHTML = "Correct answer!";
+//     } else {
+//         answerButtonGroup1.classList.add("hidden");
+//         answerArea1.classList.remove("hidden");
+//         feedbackImage.setAttribute("src", "assets/images/sad-fox.png");
+//         feedbackText.classList.toggle("error");
+//         feedbackText.innerHTML = "Wrong answer!";
+//         solutionText.innerHTML = "Try again if you want.";
+//     }
+// });
+
+// correctAnswerButton1.addEventListener("click", () => {
+//     allAnswerButtons1.classList.add("hidden");
+//     correctAnswer1.classList.remove("hidden");
+// });
+// firstWrongAnswerButton1.addEventListener("click", () => {
+//     allAnswerButtons1.classList.add("hidden");
+//     wrongAnswer1.classList.remove("hidden");
+// });
+
+// secondWrongAnswerButton1.addEventListener("click", () => {
+//     allAnswerButtons1.classList.add("hidden");
+//     wrongAnswer1.classList.remove("hidden");
+// });
 
 // wrongButtons1.addEventListener("click", () => {
 //     buttonGroup1.classList.toggle("hidden");
