@@ -17,7 +17,7 @@ document.addEventListener("click", event => {
     const addBookmark = event.target.closest('[data-js="add-bookmark"]');
     if (!addBookmark) return;
 
-    addBookmark.classList.toggle("card__bookmark--active");
+    addBookmark.classList.toggle("btn--bookmark--active");
 });
 
 // Question 01
@@ -25,7 +25,7 @@ const correctButton1 = document.querySelector('#q1 .card__choice button[isCorrec
 const wrongButtons1 = document.querySelectorAll('#q1 .card__choice button[isCorrect="false"]');
 const firstWrongButton1 = wrongButtons1[0];
 const secondWrongButton1 = wrongButtons1[1];
-const correctAnswer1 = document.querySelector("#q1 .card__correct-answer");
+const correctAnswer1 = document.querySelector("#q1 .card__answer");
 const wrongAnswer1 = document.querySelector("#q1 .card__wrong-answer");
 const buttonGroup1 = document.querySelector("#q1 .card__choice");
 
