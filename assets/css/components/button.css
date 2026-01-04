@@ -126,3 +126,19 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* TAG BUTTON */
+.btn--tag {
+    background-color: var(--color-gray-d);
+    border: var(--color-gray-d);
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 3px 10px 3px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.btn--tag:hover {
+    background-color: var(--color-gray-b);
+    border: var(--color-gray-b);
+}
