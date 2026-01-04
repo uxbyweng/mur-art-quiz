@@ -6,6 +6,10 @@ strong {
     color: var(--color-success);
 }
 
+.failure {
+    color: var(--color-failure);
+}
+
 .error {
     color: var(--color-error);
 }

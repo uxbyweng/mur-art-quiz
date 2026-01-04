@@ -3,28 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- BASE URL HANDLING for mur-art.de vs. uxbyweng.github.io -->
-    <script>
-        (function () {
-            const repoName = "mur-art-quiz";
-            const hostname = window.location.hostname; // Hostname der aktuellen Seite 
-            const pathname = window.location.pathname; // Aktueller Pfad 
-            const isGitHubPages = hostname.endsWith("github.io"); // check if on GitHub Pages
-            const pathParts = pathname.split("/").filter(part => part !== ""); // Pfad in Teile zerlegen
-            const isSubPath = pathParts[0] === repoName; // check if on /mur-art-quiz/ 
-            let baseUrl; // Base-URL festlegen
-            if (isGitHubPages || isSubPath) {
-                baseUrl = `/${repoName}/`;
-            } else {
-                baseUrl = "/";
-            }
-            document.write(`<base href="${baseUrl}">`); // Base-URL in den <head> schreiben
-        })();
-    </script>
     <title>mural.art - Create</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/index.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/create.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +16,7 @@
         <div class="logo">
             <div class="logo__image">
                 <a href="#" onclick="event.preventDefault()">
-                    <img src="assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
+                    <img src="../assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
                 </a>
             </div>
             <div class="logo__claim">
@@ -46,39 +28,94 @@
     </header>
 
     <!-- CONTENT BEREICH -->
+
     <main>
         <section>
-            <article class="card card--profile">
-                <div class="card__user">
-                    <img src="assets/images/profile-image-weng.jpg" class="card__image" width="70" height="70"
-                        alt="Profile Image: Karsten Weng">
+            <article class="card card--form">
+                <div class="card__title">
+                    <i class="icon-circle-plus" aria-hidden="true"></i>
                     <h2>
                         Add new question
                     </h2>
                 </div>
-                <div class="card__details">
-                    <h3>
-                        About me
-                    </h3>
-                    <p>
-                        Frontend Developer focused on performance and accessibility.
-                    </p>
-                </div>
-                <div class="card__details">
-                    <h3>
-                        Stats
-                    </h3>
-                    <i class="icon-circle-question-mark"></i> Questions total: <number>3</number><br>
-                    <i class="icon-bookmark"></i> Saved questions: <number>2</number>
-                </div>
-                <div class="card__details">
-                    <h3>
-                        Settings
-                    </h3>
-                    <p>
-                        <label for="darkmode">Dark Mode</label>
-                        <input type="checkbox" id="darkmode" />
-                    </p>
+                <div class="card__form">
+                    <form data-js="form">
+
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            <div class="info-group">
+                                <input type="text" name="image" id="image" placeholder="Your image" minlength="3"
+                                    required aria-describedby="image-hint image-error" />
+                                <button class="icon-info" aria-hidden="true"
+                                    style="background: transparent; border:none;"></button>
+                            </div>
+                            <p id="image-hint" class="hint hidden">
+                                Enter the image filename including the extension (e.g. mural-01.jpg). Use only letters,
+                                numbers, hyphens, and dots.
+                            </p>
+                            <p id="image-error" class="error hidden">
+                                Please enter a valid filename (for example: mural-01.jpg). Do not include spaces or a
+                                full URL.
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question">Question</label>
+                            <div class="info-group">
+                                <textarea type="text" name="question" id="question" minlength="3" required
+                                    aria-describedby="question-hint question-error"
+                                    placeholder="Your question"></textarea>
+                                <button class="icon-info" aria-hidden="true"
+                                    style="background: transparent; border:none;"></button>
+                            </div>
+                            <p id="question-hint" class="hint hidden">
+                                Write a clear quiz question that can be answered from the image. Keep it short and
+                                specific (ideally one sentence).
+                            </p>
+                            <p id="question-error" class="error hidden">
+                                Please enter a valid question. Use at least 4 characters and make it a complete,
+                                readable sentence.
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="answer">Answer</label>
+                            <div class="info-group">
+                                <textarea type="text" name="answer" id="answer" minlength="3" required
+                                    aria-describedby="answer-hint answer-error" placeholder="Your answer"></textarea>
+                                <button class="icon-info" aria-hidden="true"
+                                    style="background: transparent; border:none;"></button>
+                            </div>
+                            <p id="answer-hint" class="hint hidden">
+                                Enter the correct answer exactly as you want it displayed. Keep it concise (a name,
+                                place, or short phrase).
+                            </p>
+                            <p id="answer-error" class="error hidden">
+                                Please enter a valid answer. Use at least 4 characters and avoid long sentences.
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tags">Tags</label>
+                            <div class="info-group">
+                                <input type="text" name="tags" id="tags" placeholder="Your tags" minlength="4" required
+                                    aria-describedby="tags-hint tags-error" />
+                                <button class="icon-info" aria-hidden="true"
+                                    style="background: transparent; border:none;"></button>
+                            </div>
+                            <p id="tags-hint" class="hint hidden">
+                                Add up to 3 tags, separated by commas (e.g. astronaut, mural, kreuzberg). Use short
+                                single words where possible.
+                            </p>
+                            <p id="tags-error" class="error hidden">
+                                Please enter valid tags: 1–3 items, separated by commas. Avoid special characters and
+                                very long phrases.
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn btn--green">Create Question</button>
+                    </form>
+
                 </div>
             </article>
         </section>
@@ -89,25 +126,25 @@
         <nav class="navigation">
             <ul class="navigation__list">
                 <li class="navigation__list-item">
-                    <a href="" class="navigation__link">
+                    <a href="../" class="navigation__link">
                         <i class="icon-house" aria-hidden="true"></i>
                         <span>Home </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="bookmarks/" class="navigation__link">
+                    <a href="../bookmarks/" class="navigation__link">
                         <i class="icon-bookmark" aria-hidden="true"></i>
                         <span>Bookmarks </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="create/" class="navigation__link navigation__link--active">
+                    <a href="../create/" class="navigation__link navigation__link--active">
                         <i class="icon-circle-plus" aria-hidden="true"></i>
                         <span>Create </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="profile/" class="navigation__link">
+                    <a href="../profile/" class="navigation__link">
                         <i class="icon-circle-user" aria-hidden="true"></i>
                         <span>Profile </span>
                     </a>
