@@ -1,17 +1,7 @@
 // JavaScript für die Startseite
 
-// Bookmark button - toggle bookmark-icon
+// wenn Bookmark Icon geklickt
 const addBookmark = document.querySelectorAll('[data-js="add-bookmark"]');
-
-// addBookmark[0].addEventListener("click", () => {
-//     addBookmark[0].classList.toggle("card__bookmark--active");
-// });
-// addBookmark[1].addEventListener("click", () => {
-//     addBookmark[1].classList.toggle("card__bookmark--active");
-// });
-// addBookmark[2].addEventListener("click", () => {
-//     addBookmark[2].classList.toggle("card__bookmark--active");
-// });
 
 document.addEventListener("click", event => {
     const addBookmark = event.target.closest('[data-js="add-bookmark"]');
@@ -20,12 +10,17 @@ document.addEventListener("click", event => {
     addBookmark.classList.toggle("btn--bookmark--active");
 });
 
+// stats initialisieren
+let correctAnswers = 0;
+let wrongAnswers = 0;
+let quizStats = "";
+
 document.addEventListener("click", event => {
     // wird ein answer button geklickt
     const clickedButton = event.target.closest('[data-js="answer-button"]');
     if (!clickedButton) return;
 
-    // finde die zugehörige quiz-card
+    // finde zugehörige quiz-card
     const card = clickedButton.closest(".card");
     if (!card) return;
 
@@ -36,25 +31,75 @@ document.addEventListener("click", event => {
     const feedbackText = card.querySelector(".card__feedback");
     const solutionText = card.querySelector(".card__solution");
     const originalSolutionHTML = solutionText.innerHTML;
+    const tryAgainButton = card.querySelector(".card__buttons .btn--blue");
+    const nextQuestionButton = card.querySelector(".btn--green");
     const isCorrect = clickedButton.dataset.correct === "true";
 
-    // buttons ausblenden und answer block einblenden
+    // hole letzten grünen button
+    const lastGreenButton = document.querySelector(".card__buttons .btn--green:last-of-type");
+    const lastBlueButton = document.querySelector(".card__buttons .btn--blue:last-of-type");
+
+    // hole letzte card
+    const lastCard = document.querySelector(".quiz .card:last-of-type");
+    const isLastCard = card === lastCard; // card ist deine aktuelle Card aus closest(".card")
+
+    // choice buttons ausblenden und answer block einblenden
     choiceGroup.classList.add("hidden");
     answerArea.classList.remove("hidden");
 
-    // Feedback-Klassen sauber setzen (nicht toggle)
-    feedbackText.classList.remove("success", "error");
+    feedbackText.classList.remove("success", "failure");
 
-    if (isCorrect) {
+    if (isCorrect && isLastCard) {
+        correctAnswers = correctAnswers + 1;
         feedbackImage.src = "assets/images/winner-fox.png";
         feedbackText.classList.add("success");
         feedbackText.textContent = "Correct answer!";
-        solutionText.textContent = originalSolutionHTML;
+        solutionText.innerHTML = originalSolutionHTML;
+        tryAgainButton.classList.add("hidden");
+        nextQuestionButton.classList.add("hidden");
+        const quizStats = document.createElement("span");
+        quizStats.classList.add("card__stats");
+        if (wrongAnswers === 0) {
+            quizStats.innerHTML = `Perfect game! <strong>${correctAnswers}</strong> correct answers and not a single wrong one!`;
+        } else if (wrongAnswers <= 2) {
+            quizStats.innerHTML = `Great job! <strong>${correctAnswers}</strong> correct answers with only <strong>${wrongAnswers}</strong> wrong. Almost perfect!`;
+        } else {
+            quizStats.innerHTML = `You got <strong>${correctAnswers}</strong> correct, but <strong>${wrongAnswers}</strong> were wrong — try again and beat your score!`;
+        }
+        solutionText.append(quizStats);
+        console.log("quizStats:", quizStats);
+        console.log("correctAnswers", correctAnswers);
+        console.log("wrongAnswers", wrongAnswers);
+    } else if (isCorrect) {
+        correctAnswers = correctAnswers + 1;
+        feedbackImage.src = "assets/images/winner-fox.png";
+        feedbackText.classList.add("success");
+        feedbackText.textContent = "Correct answer!";
+        solutionText.innerHTML = originalSolutionHTML;
+        tryAgainButton.classList.add("hidden");
+        nextQuestionButton.classList.remove("hidden");
+        nextQuestionButton.onclick = () => {
+            card.classList.add("hidden");
+        };
+        console.log("quizStats:", quizStats);
+        console.log("correctAnswers", correctAnswers);
+        console.log("wrongAnswers", wrongAnswers);
     } else {
+        wrongAnswers = wrongAnswers + 1;
         feedbackImage.src = "assets/images/sad-fox.png";
-        feedbackText.classList.add("error");
+        feedbackText.classList.add("failure");
         feedbackText.textContent = "Wrong answer!";
-        solutionText.textContent = "Try again if you want.";
+        solutionText.innerHTML = "But you can try again, if you want.";
+        tryAgainButton.classList.remove("hidden");
+        tryAgainButton.onclick = () => {
+            choiceGroup.classList.remove("hidden");
+            answerArea.classList.add("hidden");
+            solutionText.innerHTML = originalSolutionHTML;
+        };
+        nextQuestionButton.classList.add("hidden");
+        console.log("quizStats:", quizStats);
+        console.log("correctAnswers", correctAnswers);
+        console.log("wrongAnswers", wrongAnswers);
     }
 });
 
@@ -119,33 +164,4 @@ document.addEventListener("click", event => {
 //         feedbackText.innerHTML = "Wrong answer!";
 //         solutionText.innerHTML = "Try again if you want.";
 //     }
-// });
-
-// correctAnswerButton1.addEventListener("click", () => {
-//     allAnswerButtons1.classList.add("hidden");
-//     correctAnswer1.classList.remove("hidden");
-// });
-// firstWrongAnswerButton1.addEventListener("click", () => {
-//     allAnswerButtons1.classList.add("hidden");
-//     wrongAnswer1.classList.remove("hidden");
-// });
-
-// secondWrongAnswerButton1.addEventListener("click", () => {
-//     allAnswerButtons1.classList.add("hidden");
-//     wrongAnswer1.classList.remove("hidden");
-// });
-
-// wrongButtons1.addEventListener("click", () => {
-//     buttonGroup1.classList.toggle("hidden");
-//     correctAnswer1.classList.toggle("hidden");
-//     question1.classList.add("hidden");
-//     errorMessage1.classList.add("error");
-//     errorMessage1.classList.remove("hidden");
-// });
-
-// document.addEventListener("click", event => {
-//     const wrongButtons1 = document.querySelectorAll('#q1 .card__choice button[isCorrect="false"]');
-//     if (!wrongButtons1) return;
-//     buttonGroup1.classList.toggle("hidden");
-//     wrongAnswer1.classList.toggle("hidden");
 // });

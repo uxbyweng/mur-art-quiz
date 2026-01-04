@@ -3,29 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- BASE URL HANDLING for mur-art.de vs. uxbyweng.github.io -->
-    <script>
-        (function () {
-            const repoName = "mur-art-quiz";
-            const hostname = window.location.hostname; // Hostname der aktuellen Seite 
-            const pathname = window.location.pathname; // Aktueller Pfad 
-            const isGitHubPages = hostname.endsWith("github.io"); // check if on GitHub Pages
-            const pathParts = pathname.split("/").filter(part => part !== ""); // Pfad in Teile zerlegen
-            const isSubPath = pathParts[0] === repoName; // check if on /mur-art-quiz/ 
-            let baseUrl; // Base-URL festlegen
-            if (isGitHubPages || isSubPath) {
-                baseUrl = `/${repoName}/`;
-            } else {
-                baseUrl = "/";
-            }
-            document.write(`<base href="${baseUrl}">`); // Base-URL in den <head> schreiben
-        })();
-    </script>
     <title>mural.art - Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/site.js" defer></script>
-    <script src="assets/js/profile.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/profile.js" defer></script>
 </head>
 
 <body>
@@ -35,7 +16,7 @@
         <div class="logo">
             <div class="logo__image">
                 <a href="">
-                    <img src="assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
+                    <img src="../assets/images/mur-art-logo.svg" alt="Logo: mur.art" width="130" height="45">
                 </a>
             </div>
             <div class="logo__claim">
@@ -51,7 +32,7 @@
         <section>
             <article class="card card--profile">
                 <div class="card__user">
-                    <img src="assets/images/profile-image-weng.jpg" class="card__image" width="70" height="70"
+                    <img src="../assets/images/profile-image-weng.jpg" class="card__image" width="70" height="70"
                         alt="Profile Image: Karsten Weng">
                     <h2>
                         Karsten Weng
@@ -90,25 +71,25 @@
         <nav class="navigation">
             <ul class="navigation__list">
                 <li class="navigation__list-item">
-                    <a href="" class="navigation__link">
+                    <a href="../" class="navigation__link">
                         <i class="icon-house" aria-hidden="true"></i>
                         <span>Home </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="bookmarks/" class="navigation__link">
+                    <a href="../bookmarks/" class="navigation__link">
                         <i class="icon-bookmark" aria-hidden="true"></i>
                         <span>Bookmarks </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="create/" class="navigation__link">
+                    <a href="../create/" class="navigation__link">
                         <i class="icon-circle-plus" aria-hidden="true"></i>
                         <span>Create </span>
                     </a>
                 </li>
                 <li class="navigation__list-item">
-                    <a href="profile/" class="navigation__link navigation__link--active">
+                    <a href="../profile/" class="navigation__link navigation__link--active">
                         <i class="icon-circle-user" aria-hidden="true"></i>
                         <span>Profile </span>
                     </a>
