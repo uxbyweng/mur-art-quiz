@@ -24,7 +24,7 @@ document.addEventListener("click", event => {
     const card = clickedButton.closest(".card");
     if (!card) return;
 
-    // hole alle elememt in dieser card
+    // finde alle elememt in dieser card
     const choiceGroup = card.querySelector(".card__choice");
     const answerArea = card.querySelector(".card__answer");
     const feedbackImage = card.querySelector(".card__feedback-image");
@@ -35,11 +35,11 @@ document.addEventListener("click", event => {
     const nextQuestionButton = card.querySelector(".btn--green");
     const isCorrect = clickedButton.dataset.correct === "true";
 
-    // hole letzten grünen button
+    // letzten grünen button
     const lastGreenButton = document.querySelector(".card__buttons .btn--green:last-of-type");
     const lastBlueButton = document.querySelector(".card__buttons .btn--blue:last-of-type");
 
-    // hole letzte card
+    // was ist die letzte card
     const lastCard = document.querySelector(".quiz .card:last-of-type");
     const isLastCard = card === lastCard; // card ist deine aktuelle Card aus closest(".card")
 
