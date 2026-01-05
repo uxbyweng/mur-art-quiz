@@ -6,6 +6,7 @@
     <title>mural.art - Create</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/index.js" defer></script>
     <script src="../assets/js/form.js" defer></script>
 </head>
 
@@ -31,105 +32,101 @@
 
     <main>
         <section>
+
             <article class="card card--form">
                 <div class="card__title">
                     <i class="icon-circle-plus" aria-hidden="true"></i>
                     <h2>
-                        Add new question
+                        Create new question
                     </h2>
                 </div>
                 <div class="card__form">
                     <form data-js="form">
 
-                        <fieldset class="form-section" aria-describedby="section-hint">
-                            <legend>Question content</legend>
-                            <p id="section-hint" class="hint hidden">
-                                Add the image and the question text. Keep the question short and answerable from the
-                                image.
-                            </p>
+                        <fieldset class="form-section" aria-describedby="question-hint">
+                            <legend>
+                                Question content
+                                <button type="button" class="icon-info"
+                                    aria-label="Show help for question content"></button>
+                            </legend>
+
                             <div class="form-group">
-                                <label for="imageFile">Image file</label>
-                                <div class="info-group">
-                                    <input type="text" name="imageFile" id="imageFile" placeholder="e.g. mural-01.jpg"
-                                        minlength="3" required aria-describedby="image-hint image-error" />
-                                    <button type="button" class="icon-info" aria-label="Show image help"></button>
-                                </div>
-                                <p id="image-hint" class="hint hidden">
-                                    Enter the image filename including the extension (e.g. mural-01.jpg). Use only
-                                    letters, numbers, hyphens, and dots.
-                                </p>
-                                <p id="image-error" class="error hidden">
-                                    Please enter a valid filename (e.g. mural-01.jpg). Do not include spaces or a full
-                                    URL.
-                                </p>
-                            </div>
-                            <div class="form-group">
-                                <label for="questionText">Question</label>
-                                <div class="info-group">
-                                    <textarea name="questionText" id="questionText" minlength="3" required
-                                        aria-describedby="question-hint question-error"
-                                        placeholder="e.g. Who is the artist of this mural?"></textarea>
-                                    <button type="button" class="icon-info" aria-label="Show question help"></button>
-                                </div>
-                                <p id="question-hint" class="hint hidden">
-                                    Write one clear sentence that can be answered from the image. Avoid vague questions
-                                    like “What do you see?”
-                                </p>
-                                <p id="question-error" class="error hidden">
-                                    Please enter a complete question (at least 3 characters).
-                                </p>
-                            </div>
-                        </fieldset>
-                        <fieldset class="form-group" aria-describedby="answers-hint answers-error">
-                            <legend>Answer options (3)</legend>
-                            <div class="info-group">
-                                <div class="form-row">
-                                    <label for="correctAnswer">Correct answer</label>
-                                    <input type="text" id="correctAnswer" name="correctAnswer" minlength="3" required
-                                        placeholder="e.g. Banksy">
-                                </div>
-                                <div class="form-row">
-                                    <label for="wrongAnswer1">Wrong answer 1</label>
-                                    <input type="text" id="wrongAnswer1" name="wrongAnswer1" minlength="3" required
-                                        placeholder="e.g. Herakut">
-                                </div>
-                                <div class="form-row">
-                                    <label for="wrongAnswer2">Wrong answer 2</label>
-                                    <input type="text" id="wrongAnswer2" name="wrongAnswer2" minlength="3" required
-                                        placeholder="e.g. Invader">
-                                </div>
-                                <button type="button" class="icon-info" aria-label="Show answer help"></button>
+                                <label for="imageFile">Image</label>
+                                <input type="file" name="imageFile" id="imageFile" aria-describedby="question-hint"
+                                    accept="image/*" />
                             </div>
 
+                            <div class="form-group">
+                                <label for="questionText">Question</label>
+                                <div class="form-group">
+                                    <textarea name="questionText" id="questionText" minlength="3" maxlength="150"
+                                        required aria-describedby="question-hint" data-js="counted"
+                                        placeholder="e.g. Who is the artist of this mural?"></textarea>
+                                    <span data-js="remaining" class="remaining">150 characters
+                                        left</span>
+                                </div>
+                            </div>
+                            <p id="question-hint" class="hint hidden">
+                                Add an image and a short, specific question that can be answered from the image. If you
+                                don’t select an image, the
+                                quiz will use a default image. Keep the question to one clear sentence and avoid vague
+                                prompts like “What do you see?”
+                            </p>
+                        </fieldset>
+
+                        <fieldset aria-describedby="answers-hint">
+                            <legend>Answer options <button type="button" class="icon-info"
+                                    aria-label="Show answer help"></button></legend>
+                            <div class="info-group">
+                                <div class="group__item">
+                                    <label for="correctAnswer">Correct answer</label>
+                                    <input type="text" id="correctAnswer" name="correctAnswer" minlength="3"
+                                        maxlength="150" required placeholder="e.g. Banksy" data-js="counted">
+                                    <span data-js="remaining" class="remaining">150
+                                        characters left</span>
+                                </div>
+                                <div class="group__item">
+                                    <label for="wrongAnswer1">Wrong answer 1</label>
+                                    <input type="text" id="wrongAnswer1" name="wrongAnswer1" minlength="3"
+                                        maxlength="150" required placeholder="e.g. Herakut" data-js="counted">
+                                    <span data-js="remaining" class="remaining">150
+                                        characters left</span>
+                                </div>
+                                <div class="group__item">
+                                    <label for="wrongAnswer2">Wrong answer 2</label>
+                                    <input type="text" id="wrongAnswer2" name="wrongAnswer2" minlength="3"
+                                        maxlength="150" required placeholder="e.g. Invader" data-js="counted">
+                                    <span data-js="remaining" class="remaining">150
+                                        characters left</span>
+                                </div>
+                            </div>
                             <p id="answers-hint" class="hint hidden">
                                 Add 1 correct and 2 wrong options. Keep them short and consistent (names/places). Avoid
                                 full sentences.
                             </p>
-                            <p id="answers-error" class="error hidden">
-                                Please fill in all three options (min. 3 characters each).
-                            </p>
                         </fieldset>
-                        <div class="form-group">
+
+                        <fieldset aria-describedby="tags-hint">
+                            <legend>Tags <button type="button" class="icon-info" aria-label="Show answer help"></button>
+                            </legend>
                             <label for="tags">Tags</label>
-                            <div class="info-group">
+                            <div class="form-group">
                                 <input type="text" name="tags" id="tags" placeholder="Your tags" minlength="4" required
-                                    aria-describedby="tags-hint tags-error" />
-                                <button type="button" class="icon-info"></button>
+                                    aria-describedby="tags-hint" />
                             </div>
-                            <p class="hint hidden">
+                            <p id="tags-hint" class="hint hidden">
                                 Add up to 3 tags, separated by commas (e.g. astronaut, mural, kreuzberg). Use short
                                 single words where possible.
                             </p>
-                            <p class="error hidden">
-                                Please enter valid tags: 1–3 items, separated by commas. Avoid special characters and
-                                very long phrases.
-                            </p>
-                        </div>
+                        </fieldset>
+
                         <button type="submit" class="btn btn--green">Create Question</button>
+
                     </form>
 
                 </div>
             </article>
+
         </section>
     </main>
 

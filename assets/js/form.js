@@ -1,8 +1,25 @@
 console.clear();
 
+function isStartPage() {
+    const path = window.location.pathname;
+
+    if (path === "/mur-art-quiz/") {
+        console.log("Startseite");
+    } else {
+        console.log("Unterseite");
+    }
+}
+console.log(isStartPage());
+
 const section = document.querySelector("section");
 const form = document.querySelector('[data-js="form"]');
-const resultOutput = document.querySelector('[data-js="result"]');
+
+// Pfadproblem lösen
+function assetUrl(fileName) {
+    return new URL(`assets/images/${fileName}`, document.baseURI).toString();
+}
+const winnerFoxSrc = assetUrl("winner-fox.png");
+const sadFoxSrc = assetUrl("sad-fox.png");
 
 document.addEventListener("click", event => {
     const infoIcon = event.target.closest(".icon-info");
@@ -10,47 +27,83 @@ document.addEventListener("click", event => {
 
     event.preventDefault();
 
-    const formGroup = infoIcon.closest(".form-group");
+    const formGroup = infoIcon.closest("fieldset");
     const hint = formGroup.querySelector(".hint");
-
     hint.classList.toggle("hidden");
+});
+
+function remainingChars(maxChars, inputChars) {
+    return maxChars - inputChars;
+}
+document.addEventListener("input", event => {
+    const input = event.target.closest('[data-js="counted"]');
+    if (!input) return;
+
+    const group = input.closest(".form-group, .group__item");
+    const output = group.querySelector('[data-js="remaining"]');
+    const maxChars = 150;
+
+    output.textContent = remainingChars(maxChars, input.value.length);
 });
 
 form.addEventListener("submit", event => {
     event.preventDefault();
 
-    // Gather data from the form and log it to the console
+    // Werte aus formularauslesen
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
-    //
+    // Quiz Image
+    const fileInput = event.target.elements.imageFile;
+    const fileObject = fileInput.files[0];
+    let fileName;
+    if (fileObject) {
+        fileName = URL.createObjectURL(fileObject);
+    } else {
+        fileName = "../assets/images/default.jpg";
+    }
 
-    console.log(data);
+    // Quiz Frage
+    const questionText = data.questionText;
+
+    // Quiz Antworten
+    const correctAnswer = data.correctAnswer;
+    const wrongAnswer1 = data.wrongAnswer1;
+    const wrongAnswer2 = data.wrongAnswer2;
+
+    // Tags
+    const tags = data.tags;
+
+    // Formular resetten
+    event.target.reset();
+    event.target.elements.imageFile.focus();
+
     const newQuizCard = document.createElement("article");
+    newQuizCard.classList.add("card");
+    newQuizCard.id = "q5";
     newQuizCard.innerHTML = `
- <article class="card" id="q1">
     <div class="card__top">
-        <img src="./assets/images/ash.jpg" alt="Foto eines Wandgemäldes an einer Hausfassade." />
+        <img src="${fileName}" alt="Foto eines Wandgemäldes an einer Hausfassade." />
         <button class="btn btn--bookmark" aria-label="Zu Lesezeichen hinzufügen" data-js="add-bookmark">
             <i class="icon-bookmark" aria-hidden="true"></i>
         </button>
-        <h2 class="card__question">Who is the artist of this mural?</h2>
+        <h2 class="card__question">${questionText}</h2>
     </div>
     <div class="card__choice" role="radiogroup">
         <button class="btn btn--blue" type="button" role="radio" data-correct="false" aria-checked="false"
-            data-js="answer-button">Herakut</button>
+            data-js="answer-button">${wrongAnswer1}</button>
         <button class="btn btn--blue" type="button" role="radio" data-correct="true" aria-checked="false"
-            data-js="answer-button">Victor Ash</button>
+            data-js="answer-button">${correctAnswer}</button>
         <button class="btn btn--blue" type="button" role="radio" data-correct="false" aria-checked="false"
-            data-js="answer-button">Invader</button>
+            data-js="answer-button">${wrongAnswer2}</button>
     </div>
     <div class="card__answer hidden">
-        <img class="card__feedback-image" src="./assets/images/winner-fox.png" width="200">
+        <img class="card__feedback-image" src="${winnerFoxSrc}" width="200">
         <h3 class="card__feedback">
             Correct answer!
         </h3>
         <p class="card__solution">
-            The mural was created by <strong>Victor Ash</strong>.
+            The titel of the mural is <strong>${correctAnswer}</strong>.
         </p>
         <div class="card__buttons">
             <button class="btn btn--blue hidden">Try again</button>
@@ -62,43 +115,6 @@ form.addEventListener("submit", event => {
         <button href="#" class="btn btn--tag">#mural</button>
         <button href="#" class="btn btn--tag">#kreuzberg</button>
     </div>
-</article>
 `;
     section.append(newQuizCard);
 });
-
-//  <article class="card" id="q1">
-//     <div class="card__top">
-//         <img src="./assets/images/ash.jpg" alt="Foto eines Wandgemäldes an einer Hausfassade." />
-//         <button class="btn btn--bookmark" aria-label="Zu Lesezeichen hinzufügen" data-js="add-bookmark">
-//             <i class="icon-bookmark" aria-hidden="true"></i>
-//         </button>
-//         <h2 class="card__question">Who is the artist of this mural?</h2>
-//     </div>
-//     <div class="card__choice" role="radiogroup">
-//         <button class="btn btn--blue" type="button" role="radio" data-correct="false" aria-checked="false"
-//             data-js="answer-button">Herakut</button>
-//         <button class="btn btn--blue" type="button" role="radio" data-correct="true" aria-checked="false"
-//             data-js="answer-button">Victor Ash</button>
-//         <button class="btn btn--blue" type="button" role="radio" data-correct="false" aria-checked="false"
-//             data-js="answer-button">Invader</button>
-//     </div>
-//     <div class="card__answer hidden">
-//         <img class="card__feedback-image" src="./assets/images/winner-fox.png" width="200">
-//         <h3 class="card__feedback">
-//             Correct answer!
-//         </h3>
-//         <p class="card__solution">
-//             The mural was created by <strong>Victor Ash</strong>.
-//         </p>
-//         <div class="card__buttons">
-//             <button class="btn btn--blue hidden">Try again</button>
-//             <button class="btn btn--green">Next Question</button>
-//         </div>
-//     </div>
-//     <div class="card__tags">
-//         <button class="btn btn--tag">#astronaut</button>
-//         <button href="#" class="btn btn--tag">#mural</button>
-//         <button href="#" class="btn btn--tag">#kreuzberg</button>
-//     </div>
-// </article>
