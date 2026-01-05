@@ -13,4 +13,4 @@ function getBaseImageURL() {
 
 // baseImageURL global verfügbar machen
 window.baseImageURL = getBaseImageURL();
-console.log("window.baseImageURL:", window.baseImageURL);
+// console.log("window.baseImageURL:", window.baseImageURL);
