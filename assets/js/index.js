@@ -1,16 +1,5 @@
 // JavaScript für die Startseite
 
-function isStartPage() {
-    const path = window.location.pathname;
-
-    if (path === "/mur-art-quiz/") {
-        console.log("Startseite");
-    } else {
-        console.log("Unterseite");
-    }
-}
-console.log(isStartPage());
-
 // wenn Bookmark Icon geklickt
 const addBookmark = document.querySelectorAll('[data-js="add-bookmark"]');
 
@@ -35,7 +24,7 @@ document.addEventListener("click", event => {
     const card = clickedButton.closest(".card");
     if (!card) return;
 
-    // finde alle elememt in dieser card
+    // finde alle elememt der card
     const choiceGroup = card.querySelector(".card__choice");
     const answerArea = card.querySelector(".card__answer");
     const feedbackImage = card.querySelector(".card__feedback-image");
@@ -45,10 +34,6 @@ document.addEventListener("click", event => {
     const tryAgainButton = card.querySelector(".card__buttons .btn--blue");
     const nextQuestionButton = card.querySelector(".btn--green");
     const isCorrect = clickedButton.dataset.correct === "true";
-
-    // letzten grünen button
-    const lastGreenButton = document.querySelector(".card__buttons .btn--green:last-of-type");
-    const lastBlueButton = document.querySelector(".card__buttons .btn--blue:last-of-type");
 
     // was ist die letzte card
     const lastCard = document.querySelector(".quiz .card:last-of-type");
@@ -62,12 +47,13 @@ document.addEventListener("click", event => {
 
     if (isCorrect && isLastCard) {
         correctAnswers = correctAnswers + 1;
-        feedbackImage.src = winnerFoxSrc;
+        feedbackImage.src = window.baseImageURL + "winner-fox.png";
         feedbackText.classList.add("success");
         feedbackText.textContent = "Correct answer!";
         solutionText.innerHTML = originalSolutionHTML;
         tryAgainButton.classList.add("hidden");
         nextQuestionButton.classList.add("hidden");
+        // quiz stats anzeigen
         const quizStats = document.createElement("span");
         quizStats.classList.add("card__stats");
         if (wrongAnswers === 0) {
@@ -78,12 +64,12 @@ document.addEventListener("click", event => {
             quizStats.innerHTML = `You got <strong>${correctAnswers}</strong> correct, but <strong>${wrongAnswers}</strong> were wrong — try again and beat your score!`;
         }
         solutionText.append(quizStats);
-        console.log("quizStats:", quizStats);
-        console.log("correctAnswers", correctAnswers);
-        console.log("wrongAnswers", wrongAnswers);
+        // console.log("quizStats:", quizStats);
+        // console.log("correctAnswers", correctAnswers);
+        // console.log("wrongAnswers", wrongAnswers);
     } else if (isCorrect) {
         correctAnswers = correctAnswers + 1;
-        feedbackImage.src = winnerFoxSrc;
+        feedbackImage.src = window.baseImageURL + "winner-fox.png";
         feedbackText.classList.add("success");
         feedbackText.textContent = "Correct answer!";
         solutionText.innerHTML = originalSolutionHTML;
@@ -92,12 +78,12 @@ document.addEventListener("click", event => {
         nextQuestionButton.onclick = () => {
             card.classList.add("hidden");
         };
-        console.log("quizStats:", quizStats);
-        console.log("correctAnswers", correctAnswers);
-        console.log("wrongAnswers", wrongAnswers);
+        // console.log("quizStats:", quizStats);
+        // console.log("correctAnswers", correctAnswers);
+        // console.log("wrongAnswers", wrongAnswers);
     } else {
         wrongAnswers = wrongAnswers + 1;
-        feedbackImage.src = sadFoxSrc;
+        feedbackImage.src = window.baseImageURL + "sad-fox.png";
         feedbackText.classList.add("failure");
         feedbackText.textContent = "Wrong answer!";
         solutionText.innerHTML = "But you can try again, if you want.";
@@ -108,9 +94,9 @@ document.addEventListener("click", event => {
             solutionText.innerHTML = originalSolutionHTML;
         };
         nextQuestionButton.classList.add("hidden");
-        console.log("quizStats:", quizStats);
-        console.log("correctAnswers", correctAnswers);
-        console.log("wrongAnswers", wrongAnswers);
+        // console.log("quizStats:", quizStats);
+        // console.log("correctAnswers", correctAnswers);
+        // console.log("wrongAnswers", wrongAnswers);
     }
 });
 
