@@ -1,3 +1,4 @@
+/* form.css */
 form {
     display: flex;
     flex-direction: column;
@@ -7,42 +8,47 @@ fieldset {
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid black;
+    border-radius: 5px;
 }
-
 legend {
+    display: flex;
+    gap: 10px;
     border-radius: 15px;
     background-color: black;
     color: var(--accent-secondary);
     padding: 3px 15px;
 }
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+input[type="text"] {
+    padding: 5px;
+    width: 100%;
+}
+textarea {
+    padding: 5px;
+    width: 100%;
+    height: 5em;
 }
 .hint {
-    font-size: 12px;
+    font-size: 14px;
 }
 .info-group {
     display: flex;
     gap: 10px;
 }
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
 .icon-info {
-    font-size: 20px;
+    color: var(--accent-secondary);
+    font-size: 18px;
     cursor: pointer;
     background: transparent;
     border: none;
 }
-input[type="text"] {
-    padding: 5px;
-    width: 100%;
-}
-
-textarea {
-    padding: 5px;
-    width: 100%;
-    height: 5em;
+.remaining {
+    color: #4c4c4c;
+    font-size: 14px;
+    font-style: italic;
 }

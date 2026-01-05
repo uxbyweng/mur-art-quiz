@@ -1,5 +1,16 @@
 // JavaScript für die Startseite
 
+function isStartPage() {
+    const path = window.location.pathname;
+
+    if (path === "/mur-art-quiz/") {
+        console.log("Startseite");
+    } else {
+        console.log("Unterseite");
+    }
+}
+console.log(isStartPage());
+
 // wenn Bookmark Icon geklickt
 const addBookmark = document.querySelectorAll('[data-js="add-bookmark"]');
 
@@ -51,7 +62,7 @@ document.addEventListener("click", event => {
 
     if (isCorrect && isLastCard) {
         correctAnswers = correctAnswers + 1;
-        feedbackImage.src = "assets/images/winner-fox.png";
+        feedbackImage.src = winnerFoxSrc;
         feedbackText.classList.add("success");
         feedbackText.textContent = "Correct answer!";
         solutionText.innerHTML = originalSolutionHTML;
@@ -72,7 +83,7 @@ document.addEventListener("click", event => {
         console.log("wrongAnswers", wrongAnswers);
     } else if (isCorrect) {
         correctAnswers = correctAnswers + 1;
-        feedbackImage.src = "assets/images/winner-fox.png";
+        feedbackImage.src = winnerFoxSrc;
         feedbackText.classList.add("success");
         feedbackText.textContent = "Correct answer!";
         solutionText.innerHTML = originalSolutionHTML;
@@ -86,7 +97,7 @@ document.addEventListener("click", event => {
         console.log("wrongAnswers", wrongAnswers);
     } else {
         wrongAnswers = wrongAnswers + 1;
-        feedbackImage.src = "assets/images/sad-fox.png";
+        feedbackImage.src = sadFoxSrc;
         feedbackText.classList.add("failure");
         feedbackText.textContent = "Wrong answer!";
         solutionText.innerHTML = "But you can try again, if you want.";

@@ -142,9 +142,7 @@
     color: var(--text-color);
     margin: 5px 0 5px 0;
 }
-.card--form number {
-    font-weight: 700;
-}
+
 .card__title {
     display: flex;
     flex-direction: row;
@@ -153,9 +151,10 @@
     height: 60px;
     gap: 20px;
 }
-.card__title i {
+.card__title .icon-circle-plus {
     color: var(--text-color);
-    font-size: 40px;
+    font-size: 36px;
+    opacity: 0.7;
 }
 .card__image {
     border-radius: 50%;
