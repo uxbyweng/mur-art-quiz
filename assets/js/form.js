@@ -1,5 +1,3 @@
-console.clear();
-
 const section = document.querySelector("section");
 const form = document.querySelector('[data-js="form"]');
 
