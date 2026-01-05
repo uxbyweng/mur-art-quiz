@@ -14,10 +14,10 @@
     --accent-secondary-dark: #006699;
     --background-light: #0037dc;
     --background-dark: #021c6a;
-    --text-color-dark: #000000;
+    --text-color-dark: #021c6a;
     --text-color-light: #ffffff;
-    --headline-color-dark: #000000;
-    --headline-color-light: #ffffff;
+    --headline-color-dark: #021c6a;
+    --headline-color-light: #00ff00;
     --color-error: #ff0000;
     --color-failure: #ff0000;
     --color-success: #009900;
@@ -28,7 +28,7 @@
     --black: #000;
     --dark-blue: #001042;
     /* Standard = light */
-    --backround-white: var(--accent-secondary);
+    --backround-card: var(--accent-secondary);
     --background-color: var(--background-light);
     --text-color: var(--text-color-dark);
     --headline-color: var(--headline-color-dark);
@@ -43,15 +43,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-weight: 300;
-    line-height: 1.6;
-    scrollbar-gutter: stable;
+    line-height: 2;
 }
 
 body.dark {
+    --backround-card: var(--dark-blue);
     --background-color: var(--background-dark);
-    --text-color: var(--text-color-dark);
-    --headline-color: var(--headline-color-dark);
-    --backround-white: var(--dark-blue);
+    --text-color: var(--accent-secondary);
+    --headline-color: var(--headline-color-light);
 }
 
 h1,

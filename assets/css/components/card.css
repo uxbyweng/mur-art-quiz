@@ -1,7 +1,7 @@
 .card {
     border-radius: 16px;
     overflow: hidden;
-    background: #fff;
+    background: var(--backround-card);
     display: flex;
     flex-direction: column;
 }
@@ -13,6 +13,9 @@
 }
 
 /* QUIZ CARD */
+.card--quiz {
+    background: var(--white);
+}
 .card__choice {
     padding: 0 12px 12px 12px;
     display: flex;
@@ -101,12 +104,14 @@
 
 /* PROFILE CARD */
 .card--profile {
-    background: var(--backround-white);
     padding: 10px 20px;
 }
-.card--profile p,
 .card--profile h2,
-.card--profile h3,
+.card--profile h3 {
+    color: var(--headline-color);
+    margin: 5px 0 5px 0;
+}
+.card--profile p,
 .card--profile i {
     color: var(--text-color);
     margin: 5px 0 5px 0;
@@ -132,7 +137,6 @@
 
 /* FORM CARD */
 .card--form {
-    background: var(--backround-white);
     padding: 10px 20px;
 }
 .card--form p,
