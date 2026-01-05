@@ -1,26 +1,9 @@
 console.clear();
 
-function isStartPage() {
-    const path = window.location.pathname;
-
-    if (path === "/mur-art-quiz/") {
-        console.log("Startseite");
-    } else {
-        console.log("Unterseite");
-    }
-}
-console.log(isStartPage());
-
 const section = document.querySelector("section");
 const form = document.querySelector('[data-js="form"]');
 
-// Pfadproblem lösen
-function assetUrl(fileName) {
-    return new URL(`assets/images/${fileName}`, document.baseURI).toString();
-}
-const winnerFoxSrc = assetUrl("winner-fox.png");
-const sadFoxSrc = assetUrl("sad-fox.png");
-
+// Info Icon Ein- und Ausklapp Funktion
 document.addEventListener("click", event => {
     const infoIcon = event.target.closest(".icon-info");
     if (!infoIcon) return;
@@ -32,6 +15,7 @@ document.addEventListener("click", event => {
     hint.classList.toggle("hidden");
 });
 
+// Verbleibende Zeichen Funktion
 function remainingChars(maxChars, inputChars) {
     return maxChars - inputChars;
 }
@@ -57,6 +41,7 @@ form.addEventListener("submit", event => {
     const fileInput = event.target.elements.imageFile;
     const fileObject = fileInput.files[0];
     let fileName;
+    console.log(fileName);
     if (fileObject) {
         fileName = URL.createObjectURL(fileObject);
     } else {
@@ -98,7 +83,7 @@ form.addEventListener("submit", event => {
             data-js="answer-button">${wrongAnswer2}</button>
     </div>
     <div class="card__answer hidden">
-        <img class="card__feedback-image" src="${winnerFoxSrc}" width="200">
+        <img class="card__feedback-image" src="${window.baseImageURL}winner-fox.png" width="200">
         <h3 class="card__feedback">
             Correct answer!
         </h3>
