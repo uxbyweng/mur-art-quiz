@@ -5,9 +5,8 @@ let correctAnswers = 0;
 let wrongAnswers = 0;
 let quizStats = "";
 
-// Bookmark Icon
+// Bookmark Icon / Toogle
 const addBookmark = document.querySelectorAll('[data-js="add-bookmark"]');
-
 document.addEventListener("click", event => {
     const addBookmark = event.target.closest('[data-js="add-bookmark"]');
     if (!addBookmark) return;
