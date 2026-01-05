@@ -1,6 +1,11 @@
 // JavaScript für die Startseite
 
-// wenn Bookmark Icon geklickt
+// stats initialisieren
+let correctAnswers = 0;
+let wrongAnswers = 0;
+let quizStats = "";
+
+// Bookmark Icon
 const addBookmark = document.querySelectorAll('[data-js="add-bookmark"]');
 
 document.addEventListener("click", event => {
@@ -10,13 +15,9 @@ document.addEventListener("click", event => {
     addBookmark.classList.toggle("btn--bookmark--active");
 });
 
-// stats initialisieren
-let correctAnswers = 0;
-let wrongAnswers = 0;
-let quizStats = "";
-
+// Quiz Card Funktion
 document.addEventListener("click", event => {
-    // wird ein answer button geklickt
+    // wenn answer button geklickt
     const clickedButton = event.target.closest('[data-js="answer-button"]');
     if (!clickedButton) return;
 
@@ -24,7 +25,7 @@ document.addEventListener("click", event => {
     const card = clickedButton.closest(".card");
     if (!card) return;
 
-    // finde alle elememt der card
+    // finde quiz card elememte
     const choiceGroup = card.querySelector(".card__choice");
     const answerArea = card.querySelector(".card__answer");
     const feedbackImage = card.querySelector(".card__feedback-image");
@@ -35,9 +36,16 @@ document.addEventListener("click", event => {
     const nextQuestionButton = card.querySelector(".btn--green");
     const isCorrect = clickedButton.dataset.correct === "true";
 
-    // was ist die letzte card
+    //  letzte card ermitteln
     const lastCard = document.querySelector(".quiz .card:last-of-type");
-    const isLastCard = card === lastCard; // card ist deine aktuelle Card aus closest(".card")
+    let isLastCard;
+    if (card === lastCard) {
+        isLastCard = true;
+        console.log("letzte card");
+    } else {
+        isLastCard = false;
+        console.log("nicht letzte card");
+    }
 
     // choice buttons ausblenden und answer block einblenden
     choiceGroup.classList.add("hidden");
@@ -61,7 +69,13 @@ document.addEventListener("click", event => {
         } else if (wrongAnswers <= 2) {
             quizStats.innerHTML = `Great job! <strong>${correctAnswers}</strong> correct answers with only <strong>${wrongAnswers}</strong> wrong. Almost perfect!`;
         } else {
-            quizStats.innerHTML = `You got <strong>${correctAnswers}</strong> correct, but <strong>${wrongAnswers}</strong> were wrong — try again and beat your score!`;
+            quizStats.innerHTML = `You got <strong>${correctAnswers}</strong> correct, but <strong>${wrongAnswers}</strong> were wrong. Try again and beat your score!`;
+            tryAgainButton.classList.remove("hidden");
+            tryAgainButton.onclick = () => {
+                choiceGroup.classList.remove("hidden");
+                answerArea.classList.add("hidden");
+                solutionText.innerHTML = originalSolutionHTML;
+            };
         }
         solutionText.append(quizStats);
         // console.log("quizStats:", quizStats);
