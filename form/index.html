@@ -37,21 +37,21 @@
     </header>
 
     <!-- CONTENT BEREICH -->
-
     <main>
         <section>
-
             <article class="card card--form">
+
                 <div class="card__title">
                     <i class="icon-circle-plus" aria-hidden="true"></i>
                     <h2>
                         Create new question
                     </h2>
                 </div>
+
                 <div class="card__form">
                     <form data-js="form">
-
                         <fieldset class="form-section" aria-describedby="question-hint">
+
                             <legend>
                                 Question content
                                 <button type="button" class="icon-info"
@@ -74,17 +74,21 @@
                                         left</span>
                                 </div>
                             </div>
+
                             <p id="question-hint" class="hint hidden">
                                 Add an image and a short, specific question that can be answered from the image. If you
                                 don’t select an image, the
                                 quiz will use a default image. Keep the question to one clear sentence and avoid vague
                                 prompts like “What do you see?”
                             </p>
+
                         </fieldset>
 
                         <fieldset aria-describedby="answers-hint">
+
                             <legend>Answer options <button type="button" class="icon-info"
                                     aria-label="Show answer help"></button></legend>
+
                             <div class="info-group">
                                 <div class="group__item">
                                     <label for="correctAnswer">Correct answer</label>
@@ -108,33 +112,38 @@
                                         characters left</span>
                                 </div>
                             </div>
+
                             <p id="answers-hint" class="hint hidden">
                                 Add 1 correct and 2 wrong options. Keep them short and consistent (names/places). Avoid
                                 full sentences.
                             </p>
+
                         </fieldset>
 
                         <fieldset aria-describedby="tags-hint">
+
                             <legend>Tags <button type="button" class="icon-info" aria-label="Show answer help"></button>
                             </legend>
+
                             <label for="tags">Tags</label>
                             <div class="form-group">
                                 <input type="text" name="tags" id="tags" placeholder="Your tags" minlength="4" required
                                     aria-describedby="tags-hint" />
                             </div>
+
                             <p id="tags-hint" class="hint hidden">
                                 Add up to 3 tags, separated by commas (e.g. astronaut, mural, kreuzberg). Use short
                                 single words where possible.
                             </p>
+
                         </fieldset>
 
                         <button type="submit" class="btn btn--green">Create Question</button>
 
                     </form>
-
                 </div>
-            </article>
 
+            </article>
         </section>
     </main>
 
